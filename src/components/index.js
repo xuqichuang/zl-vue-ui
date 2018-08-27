@@ -1,7 +1,7 @@
-import VueComponent from './VueComponent.vue'
+import vCheckbox from './vCheckbox/'
 const comment = {
   install:function(Vue){
-    Vue.component(VueComponent.name, VueComponent)
+    Vue.component('vCheckbox', vCheckbox)
   }
 }
 
@@ -10,4 +10,4 @@ if(typeof window !== 'undefined' && window.Vue){
   window.Vue.use(comment)
 }
 // 导出模块
-export default comment;
+export default comment

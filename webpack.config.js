@@ -2,11 +2,16 @@ var path = require('path')
 var webpack = require('webpack')
 
 module.exports = {
-  entry: './src/main.js',
+  // entry: './src/main.js',
+  entry: './src/components/index.js',
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
-    filename: 'build.js'
+    // filename: 'build.js'
+    filename: 'zl-vue-ui.js',
+    library: 'zl-vue-ui',
+    libraryTarget: 'umd',
+    umdNamedDefine: true
   },
   module: {
     rules: [
