@@ -1,20 +1,15 @@
 <template>
   <div id="app">
-    <vCheckbox />
   </div>
 </template>
 
 <script>
-import vCheckbox from './components/vCheckbox/'
 export default {
   name: 'app',
   data () {
     return {
       
     }
-  },
-  components:{
-    vCheckbox
   }
 }
 </script>

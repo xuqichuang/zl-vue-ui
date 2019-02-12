@@ -73,7 +73,10 @@ if (process.env.NODE_ENV === 'production') {
     new webpack.optimize.UglifyJsPlugin({
       sourceMap: true,
       compress: {
-        warnings: false
+        warnings: false,
+        // 取消打印
+        drop_debugger: true,
+        drop_console: true
       }
     }),
     new webpack.LoaderOptionsPlugin({
