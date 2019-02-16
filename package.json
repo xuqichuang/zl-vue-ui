@@ -1,7 +1,7 @@
 {
   "name": "zl-vue-ui",
   "description": "A Vue.js project",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "author": "徐其闯 <xqc1319681561@163.com>",
   "main": "dist/zl-vue-ui.js",
   "license": "MIT",
@@ -26,7 +26,8 @@
   ],
   "keywords": [
     "vue",
-    "vue-ui"
+    "vue-ui",
+    "js"
   ],
   "devDependencies": {
     "babel-core": "^6.26.0",
