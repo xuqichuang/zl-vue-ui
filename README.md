@@ -13,6 +13,7 @@ Vue.use(zlVueUi)
 **目前内部的组件**
 - zlCalendar 日历组件，仿照美团酒店编写的日历组件，支持单选和双选
 - zlRange 价格滑块，双向滑动
+- zlSlideDelete 左滑删除 [git源文件地址](https://github.com/xuqichuang/zl-slide-delete)
 
 
 ### zlCalendar
@@ -177,7 +178,7 @@ maxMove
 ### zlSlideDelete
 > 左滑删除，可以自定义滑动或不滑动，主要内容需根据组件需求而定义
 
-> [git源文件地址](https://github.com/xuqichuang/zl-slide-delete)
+[git源文件地址](https://github.com/xuqichuang/zl-slide-delete)
 ###### 使用方法
 
 > html
