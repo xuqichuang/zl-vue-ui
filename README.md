@@ -176,6 +176,8 @@ maxMove
 
 ### zlSlideDelete
 > 左滑删除，可以自定义滑动或不滑动，主要内容需根据组件需求而定义
+
+> [git源文件地址](https://github.com/xuqichuang/zl-slide-delete)
 ###### 使用方法
 
 > html
