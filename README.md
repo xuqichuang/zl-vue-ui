@@ -2,6 +2,12 @@
 
 > 公司实际项目中编写的一些组件，后续会持续更新，有不足的地方希望大家提出宝贵意见，大家共同进步, 主要组件如下
 
+## 引入组件
+
+```
+npm install zl-vue-ui -S
+```
+
 ### 全局引用方法
 > main.js 中引入
 
@@ -11,8 +17,8 @@ Vue.use(zlVueUi)
 ```
 ## 以下是主要组件
 **目前内部的组件**
-- zlCalendar 日历组件，仿照美团酒店编写的日历组件，支持单选和双选
-- zlRange 价格滑块，双向滑动
+- zlCalendar 日历组件，仿照美团酒店编写的日历组件，支持单选和双选[git源文件地址](https://github.com/xuqichuang/zl-calendar)
+- zlRange 价格滑块，双向滑动[git源文件地址](https://github.com/xuqichuang/zl-range)
 - zlSlideDelete 左滑删除 [git源文件地址](https://github.com/xuqichuang/zl-slide-delete)
 
 
