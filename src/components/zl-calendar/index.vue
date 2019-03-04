@@ -2,7 +2,7 @@
  * @Author: 徐其闯 
  * @Date: 2019-02-01 18:04:39 
  * @Last Modified by: 徐其闯
- * @Last Modified time: 2019-02-12 12:36:35
+ * @Last Modified time: 2019-03-04 11:36:12
  */
 
 <template>
@@ -27,12 +27,12 @@
               </div>
               <div class="day-container">
                 <div v-for="(list, key) in item.dayList" 
-                  @click="daySelected(list)"
+                  @click.stop="daySelected(list)"
                   class="day-list" 
                   :class="{
                     'prevent-stop':list.timeStamp < todayStamp,
                     'start-day': type == 'double' && selectedDay[0] && list.exactDate == selectedDay[0].exactDate,
-                    //'through-day': type == 'double' && selectedDay[0] && selectedDay[1] && list.timeStamp > selectedDay[0].timeStamp && list.timeStamp < selectedDay[1].timeStamp,
+                    'through-day': type == 'double' && selectedDay[0] && selectedDay[1] && list.timeStamp > selectedDay[0].timeStamp && list.timeStamp < selectedDay[1].timeStamp,
                     'end-day': type == 'double' && selectedDay[1] && list.exactDate == selectedDay[1].exactDate,
                     'one-day': type != 'double' && selectedDay[0] && list.exactDate == selectedDay[0].exactDate,
                   }"
@@ -235,19 +235,20 @@ export default {
         if (!scroll) {
           scroll = new BScroll(container, {
             //开启点击事件 默认为false
-            // click: true,
+            click: true,
             scrollY: true,
             momentum: true, // 滑动惯性
             hasVerticalScroll: true,
+            stopPropagation:true,
+            
             // scrollbar: {
             //   fade: true,
             //   interactive: false // 1.8.0 新增
             // }
           })
         } else if (!container) {
-          return
-        }
-        else {
+          return;
+        } else {
           scroll.refresh()
         }
       })
@@ -289,7 +290,7 @@ export default {
             }
           }else if(this.selectedDay.length == 2){
             // 可以一直添加
-            // if(list.timeStamp > this.selectedDay[0].timeStamp){
+            // if(list.timeStamp > this.selectedDay[0].timSetamp){
             //   this.selectedDay.splice(1,1,list)
             // }else{
             //   this.selectedDay.splice(0,1,list)
@@ -299,12 +300,13 @@ export default {
             this.selectedDay.splice(0,2,list)
           }
         }
+        // console.log(this.selectedDay)
         this.$emit('change', this.selectedDay)
       }
     }
   },
   mounted() {
-    this.scrollInit(this.scroll, this.$refs.container)
+    // this.scrollInit(this.scroll2, this.$refs.container)
     this.init()
   },
   props: {
