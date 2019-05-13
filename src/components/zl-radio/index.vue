@@ -3,7 +3,7 @@
     class="zl-theme-checkbox" 
     :disabled="disabled" 
     :checked="checked"
-    @change="change"/>
+    @change.stop="change"/>
 </template>
 <script>
 export default {

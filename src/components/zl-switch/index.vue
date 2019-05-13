@@ -8,7 +8,7 @@
       type="checkbox" 
       :checked="checked"
       :disabled="disabled"
-      @change="changeSwitch" />
+      @change.stop="changeSwitch" />
   </div>
 </template>
 <script>

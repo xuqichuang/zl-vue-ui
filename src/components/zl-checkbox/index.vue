@@ -1,5 +1,5 @@
 <template>
-<span @click="change">
+<span @click.stop="change">
   <input class="zl-theme-checkbox"
     type="checkbox" 
     :disabled="disabled" 
