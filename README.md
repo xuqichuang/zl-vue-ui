@@ -15,14 +15,31 @@ npm install zl-vue-ui -S
 import zlVueUi from 'zl-vue-ui'
 Vue.use(zlVueUi)
 ```
+### 局部引用
+
+```
+import {
+  ZlCalendar,
+  ZlCheckbox,
+  ZlLoading,
+  ZlRadio,
+  ZlRange,
+  ZlSlideDelete,
+  ZlSwitch
+} from 'zl-vue-ui'
+```
 ## 以下是主要组件
 **目前内部的组件**
-- zlCalendar 日历组件，仿照美团酒店编写的日历组件，支持单选和双选 [git源文件地址](https://github.com/xuqichuang/zl-calendar)
-- zlRange 价格滑块，双向滑动 [git源文件地址](https://github.com/xuqichuang/zl-range)
-- zlSlideDelete 左滑删除 [git源文件地址](https://github.com/xuqichuang/zl-slide-delete)
+- ZlCalendar 日历组件，仿照美团酒店编写的日历组件，支持单选和双选 [git源文件地址](https://github.com/xuqichuang/zl-calendar)
+- ZlCheckbox 多选框
+- ZlLoading loading加载
+- ZlRadio 单选框
+- ZlRange 价格滑块，双向滑动 [git源文件地址](https://github.com/xuqichuang/zl-range)
+- ZlSlideDelete 左滑删除 [git源文件地址](https://github.com/xuqichuang/zl-slide-delete)
+- ZlSwitch switch选择器
 
 
-### zlCalendar
+### ZlCalendar
 > 仿照美团酒店编写的日历组件，展示选中区间
 ###### 使用方法
 
@@ -94,7 +111,105 @@ change
 返回值：Array selectedDate
 ```
 
-### zlRange
+### ZlCheckbox
+> 多选框
+###### 使用方法
+
+> html
+```
+<zl-checkbox v-model="checked" :len="len" :max="max" @change="change"></zl-checkbox>
+```
+> js
+
+```
+data:{
+    checked:false
+},
+methods:{
+  change(checked){
+
+  }
+}
+
+```
+> props
+
+```
+checked:{ // 选中状态
+  type: Boolean,
+},
+disabled:{ // 不可选中
+  type:Boolean,
+  default:false
+},
+len:{ // 当前选中长度
+  type: [Number, String]
+},
+max:{ // 允许选择最大长度
+  type: [Number, String]
+}
+```
+> events
+
+change
+返回值：Boolean
+
+
+
+### ZlLoading
+> loading加载
+###### 使用方法
+
+> js
+
+```
+this.$loading.show('circle',{text:'加载中...­',type:'wave'}) 显示
+this.$loading.hide() 隐藏
+
+```
+参数1 目前可选loading样式:  circle, accordion, double-circle, heart, rotate-circle, scale-circle
+
+参数2 目前可选文字: {text: 自己定义的 text值, type: 目前只支持 wave},可以不传，使用默认值
+
+
+### ZlRadio
+> 单选框
+###### 使用方法
+
+> html
+```
+<zl-radio v-model="checked" @change="change"></zl-radio>
+```
+> js
+
+```
+data:{
+    checked:false
+},
+methods:{
+  change(checked){
+
+  }
+}
+
+```
+> props
+
+```
+checked:{ // 选中状态
+  type: Boolean,
+},
+disabled:{ // 不可选中
+  type:Boolean,
+  default:false
+},
+```
+> events
+
+change
+返回值：Boolean
+
+### ZlRange
 > 价格滑块，双向滑动，开发人员可以自定义最大值和最小值
 ###### 使用方法
 
@@ -181,7 +296,7 @@ maxMove
 返回值：String // 最大值
 ```
 
-### zlSlideDelete
+### ZlSlideDelete
 > 左滑删除，可以自定义滑动或不滑动，主要内容需根据组件需求而定义
 
 [git源文件地址](https://github.com/xuqichuang/zl-slide-delete)
@@ -293,3 +408,44 @@ editor
 
 
 
+
+
+### ZlSwitch
+> switch选择器
+###### 使用方法
+
+> html
+```
+<zl-switch v-model="checked" @change="change"></zl-switch>
+```
+> js
+
+```
+data:{
+    checked:false
+},
+methods:{
+  change(checked){
+
+  }
+}
+
+```
+> props
+
+```
+checked:{ // 选中状态
+  type: Boolean,
+},
+disabled:{ // 不可选中
+  type:Boolean,
+  default:false
+},
+options:{
+  type:Object, {show:'选中文案', hide: '不选中文案'}
+}
+```
+> events
+
+change
+返回值：Boolean

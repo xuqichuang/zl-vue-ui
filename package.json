@@ -1,9 +1,9 @@
 {
   "name": "zl-vue-ui",
-  "description": "A Vue.js project",
-  "version": "1.0.6",
+  "description": "臻旅UI组件",
+  "version": "1.0.8",
   "author": "徐其闯 <xqc1319681561@163.com>",
-  "main": "dist/zl-vue-ui.js",
+  "main": "index.js",
   "license": "MIT",
   "private": false,
   "scripts": {
@@ -27,7 +27,8 @@
   "keywords": [
     "vue",
     "vue-ui",
-    "js"
+    "js",
+    "机票，酒店，火车票"
   ],
   "devDependencies": {
     "babel-core": "^6.26.0",
