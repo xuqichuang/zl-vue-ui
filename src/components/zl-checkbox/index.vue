@@ -57,7 +57,7 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
+<style lang="less" scoped>
 span{
   line-height: 0;
 }

@@ -72,7 +72,7 @@ export default {
 }
 </script>
 
-<style lang='scss' scoped>
+<style lang='less' scoped>
 @-webkit-keyframes rotate {
   0% {
     -webkit-transform: rotate(0deg);
@@ -231,7 +231,7 @@ div:hover {
 .loader, .loader * {
   will-change: transform;
 }
-$loading-color: #eee;
+@loading-color: #eee;
 .prevent{
   position: fixed;
   width: 100%;
@@ -255,7 +255,7 @@ $loading-color: #eee;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  color: $loading-color;
+  color: @loading-color;
   .circle{
     // transition: all .3s ease;
     position: relative;
@@ -265,8 +265,8 @@ $loading-color: #eee;
     .loading{
       width: 100%;
       height: 100%;
-      border-top:2px solid $loading-color;
-      border-left:2px solid $loading-color;
+      border-top:2px solid @loading-color;
+      border-left:2px solid @loading-color;
       border-radius: 100% 0 0;
       animation: circles 1s cubic-bezier(1, -0.57, 0.36, 1.46) infinite;
       position: absolute;
@@ -305,7 +305,7 @@ $loading-color: #eee;
     text-align: center;
     font-size: 10px;
     div {
-      background-color: $loading-color;
+      background-color: @loading-color;
       height: 100%;
       width: 6px;
       display: inline-block;
@@ -364,7 +364,7 @@ $loading-color: #eee;
       width: 100%;
       height: 100%;
       border-radius: 50%;
-      background-color: $loading-color;
+      background-color: @loading-color;
       opacity: 0.6;
       position: absolute;
       top: 0;
@@ -455,7 +455,7 @@ $loading-color: #eee;
       display: inline-block;
       position: absolute;
       top: 0;
-      background-color: $loading-color;
+      background-color: @loading-color;
       border-radius: 100%;
       -webkit-animation: rotate-circle-bounce 2.0s infinite ease-in-out;
       animation: rotate-circle-bounce 2.0s infinite ease-in-out;
@@ -493,7 +493,7 @@ $loading-color: #eee;
     div {
       width: 10px;
       height: 10px;
-      background-color: $loading-color;
+      background-color: @loading-color;
       border-radius: 100%;
       display: inline-block;
       -webkit-animation: scale-circle 1s infinite ease-in-out;

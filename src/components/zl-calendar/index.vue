@@ -2,7 +2,7 @@
  * @Author: 徐其闯 
  * @Date: 2019-02-01 18:04:39 
  * @Last Modified by: 徐其闯
- * @Last Modified time: 2019-03-04 11:36:12
+ * @Last Modified time: 2019-05-15 18:39:04
  */
 
 <template>
@@ -356,7 +356,7 @@ export default {
 }
 </script>
 
-<style lang='scss' scoped>
+<style lang='less' scoped>
 // fade
 .fade-enter-active, .fade-leave-active {
   transition: background .3s;

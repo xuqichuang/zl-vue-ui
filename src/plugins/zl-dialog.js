@@ -1,16 +1,16 @@
-import zlLoadingComponent from '../components/zl-loading'; 
+import zlDialogComponent from '../components/zl-dialog'; 
 let $vm;
 export default {
   install(Vue, options){
     if (!$vm) {
-        const ZlLoadingPlugin = Vue.extend(zlLoadingComponent);
-        $vm = new ZlLoadingPlugin({
+        const ZlDialogPlugin = Vue.extend(zlDialogComponent);
+        $vm = new ZlDialogPlugin({
             el: document.createElement('div')
         });
         document.body.appendChild($vm.$el);
     }
     $vm.show = false;
-    let loading = {
+    let dialog = {
         show(type, content) {
             $vm.show = true;
             $vm.type = type;
@@ -22,10 +22,10 @@ export default {
     };
     if (!Vue.$zhenlv) {
       Vue.$zhenlv = {
-        loading
+        dialog
       }
     }else{
-      Vue.$zhenlv.loading = loading;
+      Vue.$zhenlv.dialog = dialog;
     }
     Vue.mixin({
       created() {

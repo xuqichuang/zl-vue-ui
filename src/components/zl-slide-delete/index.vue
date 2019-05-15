@@ -167,7 +167,7 @@ export default {
 }
 </script>
 
-<style lang='scss' scoped>
+<style lang='less' scoped>
   .list{
     border-bottom:1px solid #f3f4f8;
     position: relative;

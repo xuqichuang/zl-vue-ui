@@ -21,7 +21,10 @@ Vue.use(zlVueUi)
 import {
   ZlCalendar,
   ZlCheckbox,
+  ZlDialog,
+  ZlDialogPlugin,
   ZlLoading,
+  ZlLoadingPlugin,
   ZlRadio,
   ZlRange,
   ZlSlideDelete,
@@ -37,6 +40,7 @@ import {
 - ZlRange 价格滑块，双向滑动 [git源文件地址](https://github.com/xuqichuang/zl-range)
 - ZlSlideDelete 左滑删除 [git源文件地址](https://github.com/xuqichuang/zl-slide-delete)
 - ZlSwitch switch选择器
+- ZlDialog dialog弹框
 
 
 ### ZlCalendar
@@ -155,6 +159,44 @@ change
 返回值：Boolean
 
 
+
+### ZlDialog
+> dialog弹框
+###### 使用方法
+
+> html
+```
+<zl-dialog v-model="show"  @change="change"></zl-dialog>
+```
+> js
+
+```
+data:{
+    show:false
+},
+methods:{
+  change(show){
+
+  }
+}
+
+```
+> events
+
+change
+返回值：Boolean
+
+### ZlDialogPlugin
+> dialog弹框
+###### 使用方法, 暂无默认值，推荐使用 ZlDialog引入
+```
+this.$loading.show() 显示
+this.$loading.hide() 隐藏
+
+```
+参数1 目前可选: 暂时不支持
+
+参数2 目前可选文字: 暂时不支持
 
 ### ZlLoading
 > loading加载

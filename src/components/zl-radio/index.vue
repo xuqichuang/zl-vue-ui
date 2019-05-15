@@ -28,7 +28,7 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
+<style lang="less" scoped>
 input[type=radio] {
   width: 20px;
   height: 20px;
