@@ -34,8 +34,8 @@
       <div class="bounce3"></div>
       <div class="bounce3"></div>
     </div>
-    <div class="content" v-if="content && content.text && content.type == 'wave'">
-      <span v-for="item in content.text" :key="item">{{item}}</span>
+    <div class="content" v-if="text && textMove == 'wave'">
+      <span v-for="item in text" :key="item">{{item}}</span>
     </div>
   </div>
 </div>
@@ -59,14 +59,13 @@ export default {
       type:String,
       default:'rotate-circle'
     },
-    content:{
-      type:Object,
-      default(){
-        return {
-          text:'加载中­',
-          type:'wave'
-        }
-      }
+    text:{
+      type:String,
+      default: '加载中­'
+    },
+    textMove:{
+      type: String,
+      default: 'wave'
     }
   }
 }

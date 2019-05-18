@@ -50,16 +50,17 @@ import {
 > html
 ```
 <button @click="calendarShow"></button>
-<zl-calendar ref="zlCalendar" @change="calendarChange"/>
+<zl-calendar v-model="show" @change="calendarChange"/>
 ```
 > js
 
 ```
 data:{
-    selectedData:[]
+    selectedData:[],
+    show: false
 }
 calendarShow(){
-  this.$refs.zlCalendar.show()
+  this.show = true
 },
 calendarChange(val){
     this.selectedData = val
@@ -190,8 +191,8 @@ change
 > dialog弹框
 ###### 使用方法, 暂无默认值，推荐使用 ZlDialog引入
 ```
-this.$loading.show() 显示
-this.$loading.hide() 隐藏
+this.$zhenlv.dialog.show() 显示
+this.$zhenlv.dialog.hide() 隐藏
 
 ```
 参数1 目前可选: 暂时不支持
@@ -205,13 +206,15 @@ this.$loading.hide() 隐藏
 > js
 
 ```
-this.$loading.show('circle',{text:'加载中...­',type:'wave'}) 显示
-this.$loading.hide() 隐藏
+this.$zhenlv.loading.show({type:'circle',text:'加载中...­',textMove:'wave'}) 显示
+this.$zhenlv.loading.hide() 隐藏
 
 ```
-参数1 目前可选loading样式:  circle, accordion, double-circle, heart, rotate-circle, scale-circle
+type 目前可选loading样式:  circle, accordion, double-circle, heart, rotate-circle, scale-circle, 默认 rotate-circle
 
-参数2 目前可选文字: {text: 自己定义的 text值, type: 目前只支持 wave},可以不传，使用默认值
+text 目前可选文字:  自己定义的 text值, 默认 加载中
+
+textMove 目前只支持 wave,可以不传，使用默认值, 默认 wave
 
 
 ### ZlRadio
@@ -448,10 +451,6 @@ editor
 
 
 
-
-
-
-
 ### ZlSwitch
 > switch选择器
 ###### 使用方法
@@ -491,3 +490,21 @@ options:{
 
 change
 返回值：Boolean
+
+
+### ZlToast
+> toast提示
+###### 使用方法
+
+> js
+
+```
+this.$zhenlv.toast.show({text:'提示文字', time: 2000}) 显示
+this.$zhenlv.toast.hide() 隐藏
+
+```
+type 目前可选toast提示类型:  目前暂不支持
+
+text 目前可选文字:  自己定义的 text值, 无默认值
+
+time 持续时间, 默认 2000

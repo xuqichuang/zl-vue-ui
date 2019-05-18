@@ -1,37 +1,44 @@
-import zlLoadingComponent from '../components/zl-loading'; 
+import zlToastComponent from '../components/zl-toast'; 
 let $vm;
+let timer = null;
 export default {
   install(Vue, options){
     if (!$vm) {
-        const ZlLoadingPlugin = Vue.extend(zlLoadingComponent);
-        $vm = new ZlLoadingPlugin({
+        const ZlToastPlugin = Vue.extend(zlToastComponent);
+        $vm = new ZlToastPlugin({
             el: document.createElement('div')
         });
         document.body.appendChild($vm.$el);
     }
     $vm.show = false;
-    let loading = {
+    let toast = {
         show(options = {}) {
           console.log(typeof options)
           if( typeof options === 'string'){
             $vm.text = options;
+            $vm.time = 2000;
           }else if (typeof options === 'object') {
-            $vm.type = options.type || 'rotate-circle';
-            $vm.text = options.text || '加载中­';
-            $vm.textMove = options.textMove || 'wave';
+            $vm.type = options.type;
+            $vm.text = options.text;
+            $vm.time = options.time || 2000;
           }
           $vm.show = true;
+          timer && clearTimeout(timer)
+          timer = setTimeout(()=>{
+            $vm.show = false;
+          },$vm.time)
         },
         hide() {
+          timer && clearTimeout(timer)
           $vm.show = false;
         }
     };
     if (!Vue.$zhenlv) {
       Vue.$zhenlv = {
-        loading
+        toast
       }
     }else{
-      Vue.$zhenlv.loading = loading;
+      Vue.$zhenlv.toast = toast;
     }
     Vue.mixin({
       created() {

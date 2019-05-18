@@ -8,6 +8,8 @@ import ZlRadio from './src/components/zl-radio/index.vue'
 import ZlRange from './src/components/zl-range/index.vue'
 import ZlSlideDelete from './src/components/zl-slide-delete/index.vue'
 import ZlSwitch from './src/components/zl-switch/index.vue'
+import ZlToast from './src/components/zl-toast/index.vue'
+import ZlToastPlugin from './src/plugins/zl-toast.js'
 
 export {
   ZlCalendar,
@@ -20,4 +22,6 @@ export {
   ZlRange,
   ZlSlideDelete,
   ZlSwitch,
+  ZlToast,
+  ZlToastPlugin
 }
