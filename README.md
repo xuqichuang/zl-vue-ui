@@ -28,19 +28,22 @@ import {
   ZlRadio,
   ZlRange,
   ZlSlideDelete,
-  ZlSwitch
+  ZlSwitch,
+  ZlToast,
+  ZlToastPlugin,
 } from 'zl-vue-ui'
 ```
 ## 以下是主要组件
 **目前内部的组件**
 - ZlCalendar 日历组件，仿照美团酒店编写的日历组件，支持单选和双选 [git源文件地址](https://github.com/xuqichuang/zl-calendar)
 - ZlCheckbox 多选框
+- ZlDialog dialog弹框
 - ZlLoading loading加载
 - ZlRadio 单选框
 - ZlRange 价格滑块，双向滑动 [git源文件地址](https://github.com/xuqichuang/zl-range)
 - ZlSlideDelete 左滑删除 [git源文件地址](https://github.com/xuqichuang/zl-slide-delete)
 - ZlSwitch switch选择器
-- ZlDialog dialog弹框
+- ZlToast toast提示
 
 
 ### ZlCalendar
