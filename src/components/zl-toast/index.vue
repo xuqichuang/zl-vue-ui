@@ -4,7 +4,7 @@
     <div class="modal animated" v-show="show" @touchmove.stop="" @click="hide" :style="maskStyle"></div>
   </transition>
   <div class="toast animated" v-show="show">
-    <vue-lottie :options="defaultOptions" :width="40" :height="30" v-if="type == 'three-rhombus'"></vue-lottie>
+    <vue-lottie :options="defaultOptions" :width="40" :height="40" v-if="type == 'three-rhombus'"></vue-lottie>
     <span>{{text}}</span>
   </div>
 </div>
@@ -79,7 +79,7 @@ export default {
   transform-origin: 0% 0%;
   color: #fff;
   display: inline-block;
-  padding: 10px 20px;
+  padding: 20px;
   border-radius: 4px;
   background: rgba(0, 0, 0, 0.65);
   z-index: 2000;
