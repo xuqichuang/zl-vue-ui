@@ -12,7 +12,6 @@ export default {
     $vm.show = false;
     let loading = {
         show(options = {}) {
-          console.log(typeof options)
           if( typeof options === 'string'){
             $vm.text = options;
             $vm.background = '';
@@ -37,6 +36,12 @@ export default {
     Vue.mixin({
       created() {
         this.$zhenlv = Vue.$zhenlv;
+      },
+      deactivated() {
+        this.$zhenlv.loading.hide()
+      },
+      destroyed() {
+        this.$zhenlv.loading.hide()
       }
     })
   }

@@ -48,6 +48,9 @@ export default {
       deactivated() {
         this.$zhenlv.toast.hide()
       },
+      destroyed() {
+        this.$zhenlv.toast.hide()
+      }
     })
   }
 }

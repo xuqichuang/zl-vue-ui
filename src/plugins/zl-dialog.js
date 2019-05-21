@@ -30,6 +30,12 @@ export default {
     Vue.mixin({
       created() {
         this.$zhenlv = Vue.$zhenlv;
+      },
+      deactivated() {
+        this.$zhenlv.dialog.hide()
+      },
+      destroyed() {
+        this.$zhenlv.dialog.hide()
       }
     })
   }
