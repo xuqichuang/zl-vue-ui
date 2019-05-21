@@ -1,7 +1,10 @@
 <template>
 <div>
-<div class="prevent" @touchmove="move" v-show="show">
-  <div class='container'>
+  <transition enter-active-class="fadeIn" leave-active-class="fadeOut">
+    <div class="modal animated" v-show="show" @touchmove.stop="" @click="hide" :style="maskStyle"></div>
+  </transition>
+  <div class='container' v-show="show" :style="mask">
+    <vue-lottie :options="defaultOptions" v-if="type == 'three-rhombus'" :width="40" :height="30"></vue-lottie>
     <div class="circle" v-if="type == 'circle'">
       <div class="loading"></div>
       <div class="loading"></div>
@@ -34,44 +37,67 @@
       <div class="bounce3"></div>
       <div class="bounce3"></div>
     </div>
-    <div class="content" v-if="text && textMove == 'wave'">
-      <span v-for="item in text" :key="item">{{item}}</span>
+    <div class="content" v-if="text">
+      <span>{{text}}</span>
     </div>
   </div>
-</div>
 </div>
 </template>
 
 <script>
+import modal from '../../mixins/modal.js'
+import vueLottie from 'vue-lottie'
+import * as animationData from '../../datas/loading.json'
 export default {
-  methods: {
-    move(ev){
-      ev.stopPropagation();
-      ev.preventDefault();
+  mixins: [modal],
+  components:{
+    vueLottie
+  },
+  computed:{
+    maskStyle () {
+      let zIndex = 1000;
+      if (typeof this.maskZIndex !== 'undefined') {
+        zIndex = this.maskZIndex
+      }
+      return {
+        zIndex
+      }
     },
+    mask(){
+      let zIndex = 1001,
+          background = 'background: rgba(0,0,0,.6)';
+      if (typeof this.maskZIndex !== 'undefined') {
+        zIndex = this.maskZIndex + 1
+      }
+      if(typeof this.background !== 'undefined'){
+        background = this.background
+      }
+      return {
+        zIndex,
+        background
+      }
+    }
   },
   props: {
-    show: {
-      type:Boolean,
-      default: false
-    },
     type:{
       type:String,
-      default:'rotate-circle'
+      default:'three-rhombus'
     },
     text:{
       type:String,
-      default: '加载中­'
-    },
-    textMove:{
-      type: String,
-      default: 'wave'
+      default: '????'
+    }
+  },
+  data(){
+    return {
+      defaultOptions:{animationData: animationData}
     }
   }
 }
 </script>
 
 <style lang='less' scoped>
+@import '../../styles/zl-modal.css';
 @-webkit-keyframes rotate {
   0% {
     -webkit-transform: rotate(0deg);
@@ -133,28 +159,6 @@ export default {
             transform: rotate(360deg);
     border-top-color: rgba(0, 0, 0, 0.5);
   }
-}
-* {
-  box-sizing: border-box;
-}
-
-body {
-  background: #f9f9f9;
-  padding-bottom: 100px;
-}
-
-h1, h3 {
-  display: block;
-  margin: 0px auto;
-  text-align: center;
-  font-family: 'Tahoma';
-  font-weight: lighter;
-  color: rgba(0, 0, 0, 0.5);
-  letter-spacing: 1.5px;
-}
-
-h1 {
-  margin: 50px auto;
 }
 .loader {
   position: fixed;
@@ -231,36 +235,33 @@ div:hover {
   will-change: transform;
 }
 @loading-color: #eee;
-.prevent{
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  left:0;
-  top:0;
-  right: 0;
-  z-index: 100000;
-}
 .container{
-  position: absolute;
-  width: 15vh;
-  height:15vh;
+  position: fixed;
+  width: 100px;
+  height:150px;
   left:50%;
   top:50%;
   border-radius: 3px;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  background: rgba(0,0,0,.6);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   color: @loading-color;
+  .content{
+    width: 100%;
+    text-align: center;
+    span{
+      color: #B2B2B2;
+    }
+  }
   .circle{
     // transition: all .3s ease;
     position: relative;
     margin:auto 0;
-    width: 4vh;
-    height: 4vh;
+    width: 50px;
+    height: 60px;
     .loading{
       width: 100%;
       height: 100%;
@@ -527,56 +528,6 @@ div:hover {
       40% {
         transform: scale(1.0);
         -webkit-transform: scale(1.0);
-      }
-    }
-  }
-
-
-
-
-
-
-  .content{
-    padding-bottom: 10px;
-    span{
-      display: inline-block;
-      animation: content-translate 1.3s ease infinite;
-    }
-    span:nth-child(2n){
-      animation-delay: .1s;
-    }
-    span:nth-child(3n){
-      animation-delay: .2s;
-    }
-    span:nth-child(4n){
-      animation-delay: .3s;
-    }
-    span:nth-child(5n){
-      animation-delay: .4s;
-    }
-    span:nth-child(6n){
-      animation-delay: .5s;
-    }
-    span:nth-child(7n){
-      animation-delay: .6s;
-    }
-    span:nth-child(8n){
-      animation-delay: .7s;
-    }
-    span:nth-child(9n){
-      animation-delay: .8s;
-    }
-    span:nth-child(10n){
-      animation-delay: .9s;
-    }
-    @keyframes content-translate {
-      0%{
-        -webkit-transform: translateY(-5px);
-        transform: translateY(-5px);
-      }
-      100%{
-        -webkit-transform: translateY(5px);
-        transform: translateY(5px);
       }
     }
   }

@@ -1,40 +1,59 @@
 <template>
-<transition enter-active-class="zoomIn" leave-active-class="zoomOut">
-<div class="model animated" v-show="show" @touchmove="move">
-  <div class="toast">
+<div>
+  <transition enter-active-class="fadeIn" leave-active-class="fadeOut">
+    <div class="modal animated" v-show="show" @touchmove.stop="" @click="hide" :style="maskStyle"></div>
+  </transition>
+  <div class="toast animated" v-show="show">
+    <vue-lottie :options="defaultOptions" :width="40" :height="30" v-if="type == 'three-rhombus'"></vue-lottie>
     <span>{{text}}</span>
   </div>
 </div>
-</transition>
 </template>
 
 <script>
+import modal from '../../mixins/modal.js'
+import vueLottie from 'vue-lottie'
+import * as animationData from '../../datas/toast.json'
 export default {
-  model: {
-    prop: 'show',
-    event: 'change'
+  mixins: [modal],
+  components: {
+    vueLottie
   },
   props: {
-    show: {
-      type: Boolean,
-      default: false
+    type:{
+      type: String,
+      default: 'three-rhombus'
     },
     time:{
       type: Number,
       default: 2000
     },
-    text: String
+    text: String,
   },
-  methods: {
-    move(ev){
-      ev.stopPropagation();
-      ev.preventDefault();
+  data(){
+    return {
+      defaultOptions:{animationData: animationData}
+    }
+  },
+  computed:{
+    maskStyle () {
+      if (typeof this.maskZIndex !== 'undefined') {
+        return {
+          zIndex: this.maskZIndex
+        }
+      }
     },
+    mask(){
+      if (typeof this.maskZIndex !== 'undefined') {
+        return {
+          zIndex: this.maskZIndex + 1
+        }
+      }
+    }
   },
   watch:{
     show(val){
       if(val){
-        console.log(val)
         this.$emit('change', true)
         clearTimeout(this.timeout)
         this.timeout = setTimeout( () =>{
@@ -48,23 +67,21 @@ export default {
 
 <style lang='less' scoped>
 @import '../../styles/animate.min.css';
-.model{
-  position:fixed;
-  left:0;
-  top: 0;
-  width:100%;
-  height:100%;
-  z-index: 3000;
+@import '../../styles/zl-modal.css';
+.animated{
+  animation-duration: .3s;
 }
 .toast{
   top: 50%;
   left:50%;
   position:fixed;
   transform: translate(-50%, -50%);
+  transform-origin: 0% 0%;
   color: #fff;
   display: inline-block;
   padding: 10px 20px;
   border-radius: 4px;
   background: rgba(0, 0, 0, 0.65);
+  z-index: 2000;
 }
 </style>

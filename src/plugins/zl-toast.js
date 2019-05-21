@@ -17,8 +17,9 @@ export default {
           if( typeof options === 'string'){
             $vm.text = options;
             $vm.time = 2000;
+            $vm.type = 'three-rhombus';
           }else if (typeof options === 'object') {
-            $vm.type = options.type;
+            $vm.type = options.type || 'three-rhombus';
             $vm.text = options.text;
             $vm.time = options.time || 2000;
           }
@@ -43,7 +44,10 @@ export default {
     Vue.mixin({
       created() {
         this.$zhenlv = Vue.$zhenlv;
-      }
+      },
+      deactivated() {
+        this.$zhenlv.toast.hide()
+      },
     })
   }
 }

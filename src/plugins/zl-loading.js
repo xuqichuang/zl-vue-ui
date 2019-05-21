@@ -15,10 +15,11 @@ export default {
           console.log(typeof options)
           if( typeof options === 'string'){
             $vm.text = options;
+            $vm.background = '';
           }else if (typeof options === 'object') {
-            $vm.type = options.type || 'rotate-circle';
-            $vm.text = options.text || '加载中­';
-            $vm.textMove = options.textMove || 'wave';
+            $vm.type = options.type || 'three-rhombus';
+            $vm.text = options.text || '正在加载­';
+            $vm.background = options.background || '';
           }
           $vm.show = true;
         },

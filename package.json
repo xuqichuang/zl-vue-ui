@@ -1,7 +1,7 @@
 {
   "name": "zl-vue-ui",
   "description": "臻旅UI组件",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "author": "徐其闯 <xqc1319681561@163.com>",
   "main": "index.js",
   "license": "MIT",
@@ -17,7 +17,8 @@
   "dependencies": {
     "better-scroll": "^1.14.1",
     "moment": "^2.24.0",
-    "vue": "^2.5.11"
+    "vue": "^2.5.11",
+    "vue-lottie": "^0.2.1"
   },
   "browserslist": [
     "> 1%",
