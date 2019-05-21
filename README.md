@@ -217,7 +217,7 @@ type 目前可选loading样式:  circle, accordion, double-circle, heart, rotate
 
 text 目前可选文字:  自己定义的 text值, 默认 加载中
 
-textMove 目前只支持 wave,可以不传，使用默认值, 默认 wave
+background 背景颜色，默认无背景色 
 
 
 ### ZlRadio
@@ -502,11 +502,11 @@ change
 > js
 
 ```
-this.$zhenlv.toast.show({text:'提示文字', time: 2000}) 显示
+this.$zhenlv.toast.show({text:'提示文字', time: 2000, type: 'three-rhombus'}) 显示
 this.$zhenlv.toast.hide() 隐藏
 
 ```
-type 目前可选toast提示类型:  目前暂不支持
+type 目前可选toast提示类型:  默认 'three-rhombus', 无其他值
 
 text 目前可选文字:  自己定义的 text值, 无默认值
 
