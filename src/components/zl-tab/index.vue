@@ -19,6 +19,9 @@ export default {
         },
         'v-b': {
         template: '<div>Component B</div>'
+        },
+        'v-c': {
+        template: '<div>Component C</div>'
         }
     }
 }
