@@ -71,23 +71,24 @@ calendarChange(val){
 ```
 > 属性
 
-名字 | 类型 | 默认值 | 说明 | 版本要求
----|---|---|---|---|---
-close | String | × | 关闭文字|--
-color | String | rgb(17,55,160) | 选中的背景色 |--
-lightColor | String | rgb(17,55,160,.15) | 开始结束之间的背景色 |--
-title | String | 选择日期 | 标题文字 |--
-months | [Number,String] | 6 | 月份长度 |--
-type | String | double | 选择类型 // start 开始, end 结束, double 双选 |--
-selectedDate | Array | [moment().format('YYYY-MM-DD'),moment().add(1, 'd').format('YYYY-MM-DD')] | 默认选中日期 |--
-selectedText | Array | ['入店','离店'] | 选中的文字，顺序不可颠倒 |--
+
+|名字 | 类型 | 默认值 | 说明 | 版本要求|
+|-------------|-------------|-----|-------------|-------------|
+|close | String | × | 关闭文字|--|
+|color | String | rgb(17,55,160) | 选中的背景色 |--|
+|lightColor | String | rgb(17,55,160,.15) | 开始结束之间的背景色 |--|
+|title | String | 选择日期 | 标题文字 |--|
+|months | [Number,String] | 6 | 月份长度 |--|
+|type | String | double | 选择类型 // start 开始, end 结束, double 双选 |--|
+|selectedDate | Array | [moment().format('YYYY-MM-DD'),moment().add(1, 'd').format('YYYY-MM-DD')] | 默认选中日期 |--|
+|selectedText | Array | ['入店','离店'] | 选中的文字，顺序不可颠倒 |--|
 
 
 > 事件
 
-名字 | 参数 |  说明 | 版本要求
----|---|---|---|---
-change | (Array,selectedDate) | 切换选中的日期区间 |--
+|名字 | 参数 |  说明 | 版本要求|
+|------|------|------|------|
+|change|(Array,selectedDate)|切换选中的日期区间|--|
 
 
 ### ZlCheckbox
@@ -113,18 +114,18 @@ methods:{
 ```
 > 属性
 
-名字 | 类型 | 默认值 | 说明 | 版本要求
----|---|---|---|---|---
-checked | Boolean | false | 选中状态|--
-disabled | Boolean | false | 不可选中 |--
-len | [Number, String] | -- | 当前选中长度 |--
-max | [Number, String] | -- | 允许选择最大长度 |--
+|名字 | 类型 | 默认值 | 说明 | 版本要求|
+|---|---|---|---|---|
+|checked | Boolean | false | 选中状态|--|
+|disabled | Boolean | false | 不可选中 |--|
+|len | [Number, String] | -- | 当前选中长度 |--|
+|max | [Number, String] | -- | 允许选择最大长度 |--|
 
 > 事件
 
-名字 | 参数 |  说明 | 版本要求
----|---|---|---|---
-change | (Boolean) | 切换选中样式时触发 |--
+|名字 | 参数 |  说明 | 版本要求|
+|---|---|---|---|
+|change | (Boolean) | 切换选中样式时触发 |--|
 
 
 ### ZlDialog
@@ -150,9 +151,9 @@ methods:{
 ```
 > 属性
 
-名字 | 类型 | 默认值 | 说明 | 版本要求
----|---|---|---|---|---
-show | Boolean | false | 使用 v-model 绑定 |--
+|名字 | 类型 | 默认值 | 说明 | 版本要求|
+|---|---|---|---|---|
+|show | Boolean | false | 使用 v-model 绑定 |--|
 
 
 ### ZlDialogPlugin
@@ -161,10 +162,10 @@ show | Boolean | false | 使用 v-model 绑定 |--
 
 > 方法
 
-名字 | 参数 |  说明 | 版本要求
----|---|---|---|---
-this.$zhenlv.dialog.show() | -- | 弹窗显示 |--
-this.$zhenlv.dialog.hide() | -- | 弹窗关闭 |--
+|名字 | 参数 |  说明 | 版本要求|
+|---|---|---|---|
+|this.$zhenlv.dialog.show() | -- | 弹窗显示 |--|
+|this.$zhenlv.dialog.hide() | -- | 弹窗关闭 |--|
 
 参数1 目前可选: 暂时不支持
 
@@ -176,10 +177,10 @@ this.$zhenlv.dialog.hide() | -- | 弹窗关闭 |--
 
 > 方法
 
-名字 | 参数 |  说明 | 版本要求
----|---|---|---|---
-this.$zhenlv.loading.show({type:'three-rhombus',text:'正在加载',background:'red'}) | -- | loading显示 |--
-this.$zhenlv.loading.hide() | -- | loading关闭 |--
+|名字 | 参数 |  说明 | 版本要求|
+|---|---|---|---|
+|this.$zhenlv.loading.show({type:'three-rhombus',text:'正在加载',background:'red'}) | -- | loading显示 |--|
+|this.$zhenlv.loading.hide() | -- | loading关闭 |--|
 
 type 目前可选loading样式:  circle, accordion, double-circle, heart, rotate-circle, scale-circle, three-rhombus,默认 three-rhombus
 
@@ -211,16 +212,16 @@ methods:{
 ```
 > 属性
 
-名字 | 类型 | 默认值 | 说明 | 版本要求
----|---|---|---|---|---
-checked | Boolean | false | 选中状态|--
-disabled | Boolean | false | 不可选中 |--
+|名字 | 类型 | 默认值 | 说明 | 版本要求|
+|---|---|---|---|---|
+|checked | Boolean | false | 选中状态|--|
+|disabled | Boolean | false | 不可选中 |--|
 
 > 事件
 
-名字 | 参数 |  说明 | 版本要求
----|---|---|---|---
-change | (Boolean) | 切换选中样式时触发 |--
+|名字 | 参数 |  说明 | 版本要求|
+|---|---|---|---|
+|change | (Boolean) | 切换选中样式时触发 |--|
 
 
 ### ZlRange
@@ -268,23 +269,23 @@ methods:{
 ```
 > 属性
 
-名字 | 类型 | 默认值 | 说明 | 版本要求
----|---|---|---|---|---
-step | [String, Number] | 1 | 步长，默认是1像素|--
-min | [String, Number] | 0 | 可选的最小值 |--
-max | [String, Number] | 100 | 可选的最大值 |--
-minValue | [String, Number] | 0 | 选中的最小值 |--
-maxValue | [String, Number] | -- | 选中的最大值 |--
-space | [String, Number] | 10 | 每步滑动的像素 |--
-point | [String, Number] | 10 | 一共滑几次到头 |--
-status | Boolean | true | 弹框显示状态 |--
+|名字 | 类型 | 默认值 | 说明 | 版本要求|
+|---|---|---|---|---|
+|step | [String, Number] | 1 | 步长，默认是1像素|--|
+|min | [String, Number] | 0 | 可选的最小值 |--|
+|max | [String, Number] | 100 | 可选的最大值 |--|
+|minValue | [String, Number] | 0 | 选中的最小值 |--|
+|maxValue | [String, Number] | -- | 选中的最大值 |--|
+|space | [String, Number] | 10 | 每步滑动的像素 |--|
+|point | [String, Number] | 10 | 一共滑几次到头 |--|
+|status | Boolean | true | 弹框显示状态 |--|
 
 > 事件
 
-名字 | 参数 |  说明 | 版本要求
----|---|---|---|---
-minMove | (String) | 切换最小值时触发 |--
-maxMove | (String) | 切换最大值时触发 |--
+|名字 | 参数 |  说明 | 版本要求|
+|---|---|---|---|
+|minMove | (String) | 切换最小值时触发 |--|
+|maxMove | (String) | 切换最大值时触发 |--|
 
 
 ### ZlSlideDelete
@@ -342,22 +343,22 @@ methods:{
 ```
 > 属性
 
-名字 | 类型 | 默认值 | 说明 | 版本要求
----|---|---|---|---|---
-options | Array | -- | 传入的列表 |--
-left | String | none，目前可选 'none', 'editor' | 左侧编辑，删除选项 |--
-right | String | none，目前可选 'none', 'editor' | 右侧选中，编辑选项 |--
-slideDelete | Boolean | true，true 可以左滑删除， false 不可以左滑删除 | 是否支持左滑删除 |--
-editor | Boolean | true，true 可以编辑， false 不可以编辑 | 列表是否可编辑 |--
-leftImgOptions | Object | { img: require('./img/editor.png'),width: '20px',height: '20px' } | 左侧内容， 当left不为none显示 |--
-rightImgOptions | Object | { img: require('./img/editor.png'),width: '20px',height: '20px' } | 右侧内容， 当right不为none显示 |--
+|名字 | 类型 | 默认值 | 说明 | 版本要求|
+|---|---|---|---|---|
+|options | Array | -- | 传入的列表 |--|
+|left | String | none，目前可选 'none', 'editor' | 左侧编辑，删除选项 |--|
+|right | String | none，目前可选 'none', 'editor' | 右侧选中，编辑选项 |--|
+|slideDelete | Boolean | true，true 可以左滑删除， false 不可以左滑删除 | 是否支持左滑删除 |--|
+|editor | Boolean | true，true 可以编辑， false 不可以编辑 | 列表是否可编辑 |--|
+|leftImgOptions | Object | { img: require('./img/editor.png'),width: '20px',height: '20px' } | 左侧内容， 当left不为none显示 |--|
+|rightImgOptions | Object | { img: require('./img/editor.png'),width: '20px',height: '20px' } | 右侧内容， 当right不为none显示 |--|
 
 > 事件
 
-名字 | 参数 |  说明 | 版本要求
----|---|---|---|---
-delete-item | (index，item) | index, Number 删除的索引，item, Object 数组中的某一项 |--
-editor | (item) | item, Object 数组中的某一项, 开发人员可以根据item 做编辑删除操作 |--
+|名字 | 参数 |  说明 | 版本要求|
+|---|---|---|---|
+|delete-item | (index，item) | index, Number 删除的索引，item, Object 数组中的某一项 |--|
+|editor | (item) | item, Object 数组中的某一项, 开发人员可以根据item 做编辑删除操作 |--|
 
 
 
@@ -384,17 +385,17 @@ methods:{
 ```
 > 属性
 
-名字 | 类型 | 默认值 | 说明 | 版本要求
----|---|---|---|---|---
-checked | Boolean | false | 选中状态|--
-disabled | Boolean | false | 不可选中 |--
-options | Object | -- | {show:'选中文案', hide: '不选中文案'} |--
+|名字 | 类型 | 默认值 | 说明 | 版本要求|
+|---|---|---|---|---|
+|checked | Boolean | false | 选中状态|--|
+|disabled | Boolean | false | 不可选中 |--|
+|options | Object | -- | {show:'选中文案', hide: '不选中文案'} |--|
 
 > 事件
 
-名字 | 参数 |  说明 | 版本要求
----|---|---|---|---
-change | (Boolean) | 切换选中样式时触发 |--
+|名字 | 参数 |  说明 | 版本要求|
+|---|---|---|---|
+|change | (Boolean) | 切换选中样式时触发 |--||
 
 
 
@@ -404,10 +405,10 @@ change | (Boolean) | 切换选中样式时触发 |--
 
 > 方法
 
-名字 | 参数 |  说明 | 版本要求
----|---|---|---|---
-this.$zhenlv.toast.show({text:'提示文字', time: 2000, type: 'three-rhombus'}) | -- | toast显示 |--
-this.$zhenlv.toast.hide() | -- | toast关闭 |--
+|名字 | 参数 |  说明 | 版本要求|
+|---|---|---|---|
+|this.$zhenlv.toast.show({text:'提示文字', time: 2000, type: 'three-rhombus'}) | -- | toast显示 |--|
+|this.$zhenlv.toast.hide() | -- | toast关闭 |--|
 
 type 目前可选toast提示类型:  默认 'three-rhombus', 无其他值
 
