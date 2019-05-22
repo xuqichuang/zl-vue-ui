@@ -69,55 +69,26 @@ calendarChange(val){
     this.selectedData = val
 }
 ```
-> props
+> 属性
 
-```
-close:{ // 关闭文字
-  type: String,
-  default:'×'
-},
-color:{ //选中的背景色
-  type: String,
-  default:'rgb(17,55,160)'
-},
-lightColor:{ // 开始结束之间的背景色
-  type: String,
-  default: `rgb(17,55,160,.15)`
-},
-title:{ //标题文字
-  type: String,
-  default:'选择日期'
-},
-months:{ // 月份长度
-  type: [Number,String],
-  default:6
-},
-type:{ // 选择类型 // start 开始, end 结束, double 双选
-  type: String,
-  default: 'double', 
-},
-selectedDate:{ // 默认选中日期
-  type: Array,
-  default(){
-    return [
-      moment().format('YYYY-MM-DD'),
-      moment().add(1, 'd').format('YYYY-MM-DD')
-    ]
-  }
-},
-selectedText:{ //选中的文字，顺序不可颠倒
-  type:Array,
-  default(){
-    return ['入店','离店']
-  }
-}
-```
-> events
+名字 | 类型 | 默认值 | 说明 | 版本要求
+---|---|---|---|---|---
+close | String | × | 关闭文字|--
+color | String | rgb(17,55,160) | 选中的背景色 |--
+lightColor | String | rgb(17,55,160,.15) | 开始结束之间的背景色 |--
+title | String | 选择日期 | 标题文字 |--
+months | [Number,String] | 6 | 月份长度 |--
+type | String | double | 选择类型 // start 开始, end 结束, double 双选 |--
+selectedDate | Array | [moment().format('YYYY-MM-DD'),moment().add(1, 'd').format('YYYY-MM-DD')] | 默认选中日期 |--
+selectedText | Array | ['入店','离店'] | 选中的文字，顺序不可颠倒 |--
 
-```
-change
-返回值：Array selectedDate
-```
+
+> 事件
+
+名字 | 参数 |  说明 | 版本要求
+---|---|---|---|---
+change | (Array,selectedDate) | 切换选中的日期区间 |--
+
 
 ### ZlCheckbox
 > 多选框
@@ -140,28 +111,20 @@ methods:{
 }
 
 ```
-> props
+> 属性
 
-```
-checked:{ // 选中状态
-  type: Boolean,
-},
-disabled:{ // 不可选中
-  type:Boolean,
-  default:false
-},
-len:{ // 当前选中长度
-  type: [Number, String]
-},
-max:{ // 允许选择最大长度
-  type: [Number, String]
-}
-```
-> events
+名字 | 类型 | 默认值 | 说明 | 版本要求
+---|---|---|---|---|---
+checked | Boolean | false | 选中状态|--
+disabled | Boolean | false | 不可选中 |--
+len | [Number, String] | -- | 当前选中长度 |--
+max | [Number, String] | -- | 允许选择最大长度 |--
 
-change
-返回值：Boolean
+> 事件
 
+名字 | 参数 |  说明 | 版本要求
+---|---|---|---|---
+change | (Boolean) | 切换选中样式时触发 |--
 
 
 ### ZlDialog
@@ -185,19 +148,24 @@ methods:{
 }
 
 ```
-> events
+> 属性
 
-change
-返回值：Boolean
+名字 | 类型 | 默认值 | 说明 | 版本要求
+---|---|---|---|---|---
+show | Boolean | false | 使用 v-model 绑定 |--
+
 
 ### ZlDialogPlugin
 > dialog弹框
 ###### 使用方法, 暂无默认值，推荐使用 ZlDialog引入
-```
-this.$zhenlv.dialog.show() 显示
-this.$zhenlv.dialog.hide() 隐藏
 
-```
+> 方法
+
+名字 | 参数 |  说明 | 版本要求
+---|---|---|---|---
+this.$zhenlv.dialog.show() | -- | 弹窗显示 |--
+this.$zhenlv.dialog.hide() | -- | 弹窗关闭 |--
+
 参数1 目前可选: 暂时不支持
 
 参数2 目前可选文字: 暂时不支持
@@ -206,18 +174,18 @@ this.$zhenlv.dialog.hide() 隐藏
 > loading加载
 ###### 使用方法
 
-> js
+> 方法
 
-```
-this.$zhenlv.loading.show({type:'circle',text:'加载中...­',textMove:'wave'}) 显示
-this.$zhenlv.loading.hide() 隐藏
+名字 | 参数 |  说明 | 版本要求
+---|---|---|---|---
+this.$zhenlv.loading.show({type:'three-rhombus',text:'正在加载',background:'red'}) | -- | loading显示 |--
+this.$zhenlv.loading.hide() | -- | loading关闭 |--
 
-```
-type 目前可选loading样式:  circle, accordion, double-circle, heart, rotate-circle, scale-circle, 默认 rotate-circle
+type 目前可选loading样式:  circle, accordion, double-circle, heart, rotate-circle, scale-circle, three-rhombus,默认 three-rhombus
 
 text 目前可选文字:  自己定义的 text值, 默认 加载中
 
-background 背景颜色，默认无背景色 
+background 背景颜色，默认无背景色，支持自定义 
 
 
 ### ZlRadio
@@ -241,21 +209,19 @@ methods:{
 }
 
 ```
-> props
+> 属性
 
-```
-checked:{ // 选中状态
-  type: Boolean,
-},
-disabled:{ // 不可选中
-  type:Boolean,
-  default:false
-},
-```
-> events
+名字 | 类型 | 默认值 | 说明 | 版本要求
+---|---|---|---|---|---
+checked | Boolean | false | 选中状态|--
+disabled | Boolean | false | 不可选中 |--
 
-change
-返回值：Boolean
+> 事件
+
+名字 | 参数 |  说明 | 版本要求
+---|---|---|---|---
+change | (Boolean) | 切换选中样式时触发 |--
+
 
 ### ZlRange
 > 价格滑块，双向滑动，开发人员可以自定义最大值和最小值
@@ -300,49 +266,26 @@ methods:{
     },
 }
 ```
-> props
+> 属性
 
-```
-step:{ //步长，默认是1像素
-  type:[String, Number],
-  default:1
-},
-min:{ // 可选的最小值
-  type:[String, Number],
-  default:0
-},
-max:{ // 可选的最大值
-  type:[String, Number],
-  default:100
-},
-minValue:{ // 选中的最小值
-  type:[String, Number],
-  default:0
-},
-maxValue:{// 选中的最大值
-  type:[String, Number]
-},
-space:{ // 每步滑动的像素
-  type:[String, Number],
-  default:10
-},
-point:{// 一共滑几次到头
-  type:[String, Number],
-  default:10
-},
-status:{// 显示状态
-  type:Boolean,
-  default:true
-}
-```
-> events
+名字 | 类型 | 默认值 | 说明 | 版本要求
+---|---|---|---|---|---
+step | [String, Number] | 1 | 步长，默认是1像素|--
+min | [String, Number] | 0 | 可选的最小值 |--
+max | [String, Number] | 100 | 可选的最大值 |--
+minValue | [String, Number] | 0 | 选中的最小值 |--
+maxValue | [String, Number] | -- | 选中的最大值 |--
+space | [String, Number] | 10 | 每步滑动的像素 |--
+point | [String, Number] | 10 | 一共滑几次到头 |--
+status | Boolean | true | 弹框显示状态 |--
 
-```
-minMove
-返回值：String // 最小值
-maxMove
-返回值：String // 最大值
-```
+> 事件
+
+名字 | 参数 |  说明 | 版本要求
+---|---|---|---|---
+minMove | (String) | 切换最小值时触发 |--
+maxMove | (String) | 切换最大值时触发 |--
+
 
 ### ZlSlideDelete
 > 左滑删除，可以自定义滑动或不滑动，主要内容需根据组件需求而定义
@@ -397,60 +340,24 @@ methods:{
     },
 }
 ```
-> props
+> 属性
 
-```
-options:{
-  type:Array
-},
-left:{ //左侧编辑，删除选项
-  type:String,
-  default: 'none', //目前可选 'none', 'editor'
-},
-right:{
-  type:String, //右侧选中，编辑选项
-  default: 'none', //目前可选 'none', 'editor'
-},
-slideDelete:{ //true 可以左滑删除， false 不可以左滑删除， 默认true
-  type:Boolean,
-  default:true
-},
-editor:{ // 列表是否可编辑
-  type:Boolean,
-  default:true
-},
-leftImgOptions:{ // 左侧内容， 当left不为none显示
-  type:Object,
-  default(){
-    return {
-      img: require('./img/editor.png'),
-      width: '20px',
-      height: '20px'
-    }
-  }
-},
-rightImgOptions:{ // 右侧内容， 当right不为none显示
-  type:Object,
-  default(){
-    return {
-      img: require('./img/editor.png'),
-      width: '20px',
-      height: '20px'
-    }
-  }
-}
-```
-> events
+名字 | 类型 | 默认值 | 说明 | 版本要求
+---|---|---|---|---|---
+options | Array | -- | 传入的列表 |--
+left | String | none，目前可选 'none', 'editor' | 左侧编辑，删除选项 |--
+right | String | none，目前可选 'none', 'editor' | 右侧选中，编辑选项 |--
+slideDelete | Boolean | true，true 可以左滑删除， false 不可以左滑删除 | 是否支持左滑删除 |--
+editor | Boolean | true，true 可以编辑， false 不可以编辑 | 列表是否可编辑 |--
+leftImgOptions | Object | { img: require('./img/editor.png'),width: '20px',height: '20px' } | 左侧内容， 当left不为none显示 |--
+rightImgOptions | Object | { img: require('./img/editor.png'),width: '20px',height: '20px' } | 右侧内容， 当right不为none显示 |--
 
-```
-delete-item
-返回值：
-    index, Number // 删除的索引，
-    item, Object //数组中的某一项
-editor
-返回值：
-    item, Object // 数组中的某一项, 开发人员可以根据item 做编辑删除操作
-```
+> 事件
+
+名字 | 参数 |  说明 | 版本要求
+---|---|---|---|---
+delete-item | (index，item) | index, Number 删除的索引，item, Object 数组中的某一项 |--
+editor | (item) | item, Object 数组中的某一项, 开发人员可以根据item 做编辑删除操作 |--
 
 
 
@@ -475,39 +382,35 @@ methods:{
 }
 
 ```
-> props
+> 属性
 
-```
-checked:{ // 选中状态
-  type: Boolean,
-},
-disabled:{ // 不可选中
-  type:Boolean,
-  default:false
-},
-options:{
-  type:Object, {show:'选中文案', hide: '不选中文案'}
-}
-```
-> events
+名字 | 类型 | 默认值 | 说明 | 版本要求
+---|---|---|---|---|---
+checked | Boolean | false | 选中状态|--
+disabled | Boolean | false | 不可选中 |--
+options | Object | -- | {show:'选中文案', hide: '不选中文案'} |--
 
-change
-返回值：Boolean
+> 事件
+
+名字 | 参数 |  说明 | 版本要求
+---|---|---|---|---
+change | (Boolean) | 切换选中样式时触发 |--
+
 
 
 ### ZlToast
 > toast提示
 ###### 使用方法
 
-> js
+> 方法
 
-```
-this.$zhenlv.toast.show({text:'提示文字', time: 2000, type: 'three-rhombus'}) 显示
-this.$zhenlv.toast.hide() 隐藏
+名字 | 参数 |  说明 | 版本要求
+---|---|---|---|---
+this.$zhenlv.toast.show({text:'提示文字', time: 2000, type: 'three-rhombus'}) | -- | toast显示 |--
+this.$zhenlv.toast.hide() | -- | toast关闭 |--
 
-```
 type 目前可选toast提示类型:  默认 'three-rhombus', 无其他值
 
 text 目前可选文字:  自己定义的 text值, 无默认值
 
-time 持续时间, 默认 2000
+time 持续时间, 默认 2000 
