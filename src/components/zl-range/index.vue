@@ -194,7 +194,7 @@ export default {
 }
 </script>
 
-<style lang='scss' scoped>
+<style lang='less' scoped>
   .container{
     width: 100%;
     margin: 0 auto 0;

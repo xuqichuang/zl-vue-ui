@@ -37,13 +37,13 @@ export default {
   },
 }
 </script>
-<style lang='scss' scoped>
+<style lang='less' scoped>
 .myswipper{
   display: flex;
   align-items: center;
   input[type=checkbox] {
-    width: 1.04rem;
-    height: .64rem;
+    width: 52px;
+    height: 32px;
     -webkit-appearance: none;
     background-color: transparent;
     border: 0;
@@ -54,19 +54,19 @@ export default {
   input[type=checkbox]:before{
     content: "";
     display:block;
-    width: 1.04rem;
-    height: .64rem;
+    width: 52px;
+    height: 32px;
     border: 1px solid #ddd;
     background-color: #fff;
     box-sizing:border-box;  
-    border-radius: .64rem;
+    border-radius: 32px;
     position: absolute;
   }
   input[type=checkbox]:after{
     content: "";
     display:block;
-    width: .6rem;
-    height: .6rem;
+    width: 30px;
+    height: 30px;
     left:1px;
     top:1px;
     border: 1px solid #fff;
@@ -79,19 +79,19 @@ export default {
   input[type=checkbox]:disabled:before{
     content: "";
     display:block;
-    width: 1.04rem;
-    height: .64rem;
+    width: 52px;
+    height: 32px;
     border: 1px solid #999;
     background-color: #999;
     box-sizing:border-box;  
-    border-radius: .64rem;
+    border-radius: 32px;
     position: absolute;
   }
   input[type=checkbox]:disabled:after{
     content: "";
     display:block;
-    width: .6rem;
-    height: .6rem;
+    width: 30px;
+    height: 30px;
     left:1px;
     top:1px;
     border: 1px solid #fff;
@@ -104,19 +104,19 @@ export default {
   input[type=checkbox]:checked:before{
     content: "";
     display:block;
-    width: 1.04rem;
-    height: .64rem;
+    width: 52px;
+    height: 32px;
     border: 1px solid #D2A47E;
     background-color: #D2A47E;
     box-sizing:border-box;  
-    border-radius: .64rem;
+    border-radius: 32px;
     position: absolute;
   }
   input[type=checkbox]:checked:after{
     content: "";
     display:block;
-    width: .6rem;
-    height: .6rem;
+    width: 30px;
+    height: 30px;
     left:100%;
     -webkit-transform: translateX(-100%);
     transform: translateX(-100%);

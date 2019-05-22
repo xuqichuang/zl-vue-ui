@@ -57,13 +57,13 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
+<style lang="less" scoped>
 span{
   line-height: 0;
 }
 input[type=checkbox] {
-  width: .4rem;
-  height: .4rem;
+  width: 20px;
+  height: 20px;
   -webkit-appearance: none;
   background-color: transparent;
   border: 0;
@@ -74,8 +74,8 @@ input[type=checkbox] {
 input[type=checkbox]:before{
   content: "";
   display:block;
-  width: .4rem;
-  height: .4rem;
+  width: 20px;
+  height: 20px;
   border: 1px solid #ddd;
   background-color: #fff;
   box-sizing:border-box;  
@@ -86,8 +86,8 @@ input[type=checkbox]:before{
 input[type=checkbox]:disabled:before{
   content: "";
   display:block;
-  width: .4rem;
-  height: .4rem;
+  width: 20px;
+  height: 20px;
   border: 1px solid #bbb;
   background-color: #ddd;
   box-sizing:border-box;  
@@ -97,8 +97,8 @@ input[type=checkbox]:disabled:before{
 input[type=checkbox]:checked:before{
   content: "";
   display:block;
-  width: .4rem;
-  height: .4rem;
+  width: 20px;
+  height: 20px;
   border: 1px solid #D2A47E;
   background-color: #D2A47E;
   box-sizing:border-box;  
@@ -108,11 +108,11 @@ input[type=checkbox]:checked:before{
 input[type=checkbox]:checked:after{
   content: "";
   display:block;
-  width: .15rem;
-  height: .3rem;
-  border-left: .03rem solid #fff;
-  border-top: .03rem solid #fff;
-  border-radius:  .03rem;
+  width: 7.5px;
+  height: 15px;
+  border-left: 1.5px solid #fff;
+  border-top: 1.5px solid #fff;
+  border-radius:  1.5px;
   box-sizing:border-box; 
   position: absolute;
   transform: rotate(-135deg) translate(-70%, 25%);

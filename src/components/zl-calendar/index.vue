@@ -2,14 +2,15 @@
  * @Author: 徐其闯 
  * @Date: 2019-02-01 18:04:39 
  * @Last Modified by: 徐其闯
- * @Last Modified time: 2019-03-04 11:36:12
+ * @Last Modified time: 2019-05-16 13:34:53
  */
 
 <template>
+<div>
 <transition name="fade">
-  <div class='container' v-show="status" @click.stop="hide">
+  <div class='container' v-show="show" @click.stop="hide">
     <transition name="slide">
-      <div class="content-container" v-show="status" @click.stop="">
+      <div class="content-container" v-if="show" @click.stop="">
         <div class="top">
           <div class="close" :style="{color:color}" @click.stop="hide">{{close}}</div>
           <div class="title">{{title}}</div>
@@ -61,6 +62,7 @@
     </transition>
   </div>
 </transition>
+</div>
 </template>
 
 <script>
@@ -69,6 +71,10 @@ import BScroll from 'better-scroll'
 export default {
   components: {
     BScroll
+  },
+  model:{
+    prop: 'show',
+    event: 'calendar-show'
   },
   data() {
     return{
@@ -225,7 +231,13 @@ export default {
     }
   },
   watch: {
-    
+    'show':{
+      handler(val){
+        if(val){
+          this.scrollInit(this.scroll, this.$refs.container)
+        }
+      }
+    }
   },
   methods: {
     // 滚动组件初始化
@@ -240,25 +252,16 @@ export default {
             momentum: true, // 滑动惯性
             hasVerticalScroll: true,
             stopPropagation:true,
-            
-            // scrollbar: {
-            //   fade: true,
-            //   interactive: false // 1.8.0 新增
-            // }
           })
         } else if (!container) {
           return;
         } else {
-          scroll.refresh()
+          scroll = null;
         }
       })
     },
-    show(){
-      this.status = true;
-      this.scrollInit(this.scroll, this.$refs.container)
-    },
     hide(){
-      this.status = false
+      this.$emit('calendar-show', false)
     },
     init(){
       if(this.type == 'double'){
@@ -310,6 +313,10 @@ export default {
     this.init()
   },
   props: {
+    show:{
+      type: Boolean,
+      default: false
+    },
     close:{
       type: String,
       default:'×'
@@ -356,7 +363,7 @@ export default {
 }
 </script>
 
-<style lang='scss' scoped>
+<style lang='less' scoped>
 // fade
 .fade-enter-active, .fade-leave-active {
   transition: background .3s;
