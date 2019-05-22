@@ -27,7 +27,7 @@
                 {{item.month}}
               </div>
               <div class="day-container">
-                <div v-for="(list, key) in item.dayList" 
+                <div v-for="(list, key) in item.dayList" :key="key" 
                   @click.stop="daySelected(list)"
                   class="day-list" 
                   :class="{
