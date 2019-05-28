@@ -19,6 +19,8 @@ Vue.use(zlVueUi)
 
 ```
 import {
+  ZlAlert,
+  ZlAlertPlugin,
   ZlCalendar,
   ZlCheckbox,
   ZlConfirm,
@@ -38,7 +40,8 @@ import {
 ## 以下是主要组件
 **目前内部的组件**
 - ZlCalendar 日历组件，仿照美团酒店编写的日历组件，支持单选和双选 [git源文件地址](https://github.com/xuqichuang/zl-calendar)
-- ZlConfirm 确认框
+- ZlAlert alert提示框
+- ZlConfirm confirm提示框
 - ZlCheckbox 多选框
 - ZlDialog dialog弹框
 - ZlLoading loading加载
@@ -48,6 +51,58 @@ import {
 - ZlSwitch switch选择器
 - ZlToast toast提示
 
+### ZlAlert
+> alert 提示框
+###### 使用方法
+
+> html
+```
+<zl-switch v-model="show"></zl-switch>
+<zl-alert v-model="show" title="标题" content="内容"></zl-alert>
+```
+> js
+
+```
+data:{
+    show:false
+}
+
+```
+> 属性
+
+|名字 | 类型 | 默认值 | 说明 | 版本要求|
+|---|---|---|---|---|
+|show | Boolean | false | 使用 v-model 绑定 | -- |
+|title | String | -- | 标题 | -- |
+|content | String | -- | 内容 | -- |
+|btnText | String | 确定 | 按钮文字 | -- |
+|background | String | rgba(0,0,0,.6) | 弹层背景色 | -- |
+
+> 事件
+
+|名字 | 参数 |  说明 | 版本要求|
+|---|---|---|---|
+|on-hide | -- | 点击按钮时触发 |--|
+
+
+### ZlAlertPlugin
+> alert 提示框
+###### 使用方法
+
+> 方法
+
+|名字 | 参数 |  说明 | 版本要求|
+|---|---|---|---|
+|this.$zhenlv.alert.show() | {type:'',content:'',onHide(){}} | 弹窗显示 |--|
+|this.$zhenlv.alert.hide() | -- | 弹窗关闭 |--|
+
+参数1 type: 标题
+
+参数2 content: 内容
+
+参数3 onHide(){}: 点击按钮时触发
+
+
 
 ### ZlCalendar
 > 仿照美团酒店编写的日历组件，展示选中区间
@@ -55,7 +110,7 @@ import {
 
 > html
 ```
-<button @click="calendarShow"></button>
+<zl-switch v-model="show"></zl-switch>
 <zl-calendar v-model="show" @change="calendarChange"/>
 ```
 > js
@@ -64,12 +119,11 @@ import {
 data:{
     selectedData:[],
     show: false
-}
-calendarShow(){
-  this.show = true
 },
-calendarChange(val){
-    this.selectedData = val
+methods:{
+    calendarChange(val){
+        this.selectedData = val
+    }
 }
 ```
 > 属性
@@ -131,6 +185,62 @@ methods:{
 |change | (Boolean) | 切换选中样式时触发 |--|
 
 
+### ZlConfirm
+> confirm 提示框
+###### 使用方法
+
+> html
+```
+<zl-switch v-model="show"></zl-switch>
+<zl-confirm v-model="show" title="标题" content="内容"></zl-confirm>
+```
+> js
+
+```
+data:{
+    show:false
+}
+
+```
+> 属性
+
+|名字 | 类型 | 默认值 | 说明 | 版本要求|
+|---|---|---|---|---|
+|show | Boolean | false | 使用 v-model 绑定 | -- |
+|title | String | -- | 标题 | -- |
+|content | String | -- | 内容 | -- |
+|leftText | String | 取消 | 左侧文字 | -- |
+|rightText | String | 确定 | 右侧文字 | -- |
+|background | String | rgba(0,0,0,.6) | 弹层背景色 | -- |
+
+> 事件
+
+|名字 | 参数 |  说明 | 版本要求|
+|---|---|---|---|
+|on-cancel | -- | 取消时触发 |--|
+|on-confirm | -- | 确定时触发 |--|
+
+
+### ZlConfirmPlugin
+> confirm 提示框
+###### 使用方法
+
+> 方法
+
+|名字 | 参数 |  说明 | 版本要求|
+|---|---|---|---|
+|this.$zhenlv.confirm.show() | {type:'',content:'',onConfirm(){},onCancel(){}} | 弹窗显示 |--|
+|this.$zhenlv.confirm.hide() | -- | 弹窗关闭 |--|
+
+参数1 type: 标题
+
+参数2 content: 内容
+
+参数3 onConfirm(){}: 确认时触发
+
+参数4 onCancel(){}: 取消时触发
+
+
 ### ZlDialog
 > dialog弹框
 ###### 使用方法
@@ -157,6 +267,7 @@ methods:{
 |名字 | 类型 | 默认值 | 说明 | 版本要求|
 |---|---|---|---|---|
 |show | Boolean | false | 使用 v-model 绑定 |--|
+|background | String | rgba(0,0,0,.6) | 弹框背景色 |--|
 
 
 ### ZlDialogPlugin
@@ -167,12 +278,12 @@ methods:{
 
 |名字 | 参数 |  说明 | 版本要求|
 |---|---|---|---|
-|this.$zhenlv.dialog.show() | -- | 弹窗显示 |--|
+|this.$zhenlv.dialog.show() | {background: ''} | 弹窗显示 |--|
 |this.$zhenlv.dialog.hide() | -- | 弹窗关闭 |--|
 
-参数1 目前可选: 暂时不支持
+> 参数说明
 
-参数2 目前可选文字: 暂时不支持
+background: 弹框背景色
 
 ### ZlLoading
 > loading加载
@@ -410,7 +521,7 @@ methods:{
 
 |名字 | 参数 |  说明 | 版本要求|
 |---|---|---|---|
-|this.$zhenlv.toast.show({text:'提示文字', time: 2000, type: 'three-rhombus'}) | -- | toast显示 |--|
+|this.$zhenlv.toast.show() | {text:'提示文字', time: 2000, type: 'three-rhombus'} | toast显示 |--|
 |this.$zhenlv.toast.hide() | -- | toast关闭 |--|
 
 type 目前可选toast提示类型:  默认 'three-rhombus', 无其他值

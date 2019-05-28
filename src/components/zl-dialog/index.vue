@@ -3,12 +3,14 @@
   <transition enter-active-class="fadeIn" leave-active-class="fadeOut">
     <div class="modal animated" v-show="show" @touchmove.stop.prevent="" :style="maskLoad"></div>
   </transition>
-  <div class="container" v-show="show" :style="mask">
-    <div class="wrapper">
-      <slot></slot>
+  <transition enter-active-class="zoomIn" leave-active-class="zoomOut">
+    <div class="container animated" v-show="show" :style="mask">
+      <div class="wrapper">
+        <slot></slot>
+      </div>
+      <div class="zl_close" @click.stop="_hide"></div>
     </div>
-    <div class="zl_close" @click.stop="_hide"></div>
-  </div>
+  </transition>
 </div>
 </template>
 
@@ -41,7 +43,7 @@ export default {
 </script>
 
 <style lang='less' scoped>
-@import '../../styles/zl-modal.css';
+@import '../../styles/zl-modal.less';
 @import '../../styles/close.less';
 .container {
   position: fixed;
@@ -51,6 +53,8 @@ export default {
   min-height: 350px;
   max-height: 450px;
   transform: translate(-50%,-50%);
+  .transform-origin;
+  .animate-t;
   .wrapper{
     border-radius: 4px;
     width: 100%;

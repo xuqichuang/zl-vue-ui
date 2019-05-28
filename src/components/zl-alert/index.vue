@@ -6,14 +6,13 @@
   <transition enter-active-class="zoomIn" leave-active-class="zoomOut">
     <div class="container animated" v-show="show" :style="mask" @touchmove.prevent="">
       <div class="wrapper">
-        <div class="confirm-content">
+        <div class="alert-content">
           <div class="title" v-if="!!title">{{ title }}</div>
           <slot><div class="content" v-if="!!content" v-html="content"></div></slot>
         </div>
       </div>
-      <div class="confirm-bottom zl-1px-t">
-        <div class="left zl-1px-r" @click.stop="_cancel">{{ left }}</div>
-        <div class="right zl-theme-color" @click.stop="_confirm">{{ right }}</div>
+      <div class="alert-bottom zl-1px-t">
+        <div class="btn zl-theme-color" @click.stop="_hide">{{ btnText }}</div>
       </div>
     </div>
   </transition>
@@ -32,18 +31,6 @@ export default {
       }
     }
   },
-  methods:{
-    _cancel(){
-      this.$emit('update:show', false)
-      this.$emit('change', false)
-      this.$emit('on-cancel')
-    },
-    _confirm(){
-      this.$emit('update:show', false)
-      this.$emit('change', false)
-      this.$emit('on-confirm')
-    },
-  },
   props:{
     title:{
       type: String
@@ -51,11 +38,7 @@ export default {
     content:{
       type: String
     },
-    left:{
-      type: String,
-      default: '取消'
-    },
-    right:{
+    btnText:{
       type: String,
       default: '确定'
     },
@@ -83,7 +66,7 @@ export default {
   .animate-t;
   .wrapper{
     padding:10px 20px;
-    .confirm-content{
+    .alert-content{
       .title{
         font-size: 18px;
         padding: 5px 0;
@@ -95,19 +78,15 @@ export default {
       }
     }
   }
-  .confirm-bottom{
+  .alert-bottom{
     height: 50px;
-    display: flex;
-    .left, .right{
+    .btn{
       height: 100%;
-      flex:1;
       display: flex;
       justify-content: center;
       align-items: center;
       font-size: 16px;
-    }
-    .right{
-      color:#D2A47E;
+      color: #D2A47E;
     }
   }
 }

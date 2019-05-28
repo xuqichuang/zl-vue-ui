@@ -84,7 +84,7 @@ export default {
 </script>
 
 <style lang='less' scoped>
-@import '../../styles/zl-modal.css';
+@import '../../styles/zl-modal.less';
 @-webkit-keyframes rotate {
   0% {
     -webkit-transform: rotate(0deg);

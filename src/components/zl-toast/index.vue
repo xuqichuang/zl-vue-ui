@@ -3,10 +3,12 @@
   <transition enter-active-class="fadeIn" leave-active-class="fadeOut">
     <div class="modal animated" v-show="show" @touchmove.stop="" @click="hide" :style="maskStyle"></div>
   </transition>
-  <div class="toast animated" v-show="show">
-    <vue-lottie :options="defaultOptions" :width="50" :height="30" v-if="type == 'three-rhombus'"></vue-lottie>
-    <span class="text">{{text}}</span>
-  </div>
+  <transition enter-active-class="fadeIn" leave-active-class="fadeOut">
+    <div class="toast animated" v-show="show">
+      <vue-lottie :options="defaultOptions" :width="50" :height="30" v-if="type == 'three-rhombus'"></vue-lottie>
+      <span class="text">{{text}}</span>
+    </div>
+  </transition>
 </div>
 </template>
 
@@ -50,11 +52,7 @@ export default {
 </script>
 
 <style lang='less' scoped>
-@import '../../styles/animate.min.css';
-@import '../../styles/zl-modal.css';
-.animated{
-  animation-duration: .3s;
-}
+@import '../../styles/zl-modal.less';
 .toast{
   top: 50%;
   left:50%;
@@ -68,6 +66,7 @@ export default {
   background: rgba(0, 0, 0, 0.65);
   z-index: 2000;
   text-align: center;
+  .animate-t;
   .text{
     font-size: 14px;
   }
