@@ -1,5 +1,7 @@
 import ZlCalendar from './src/components/zl-calendar/index.vue'
 import ZlCheckbox from './src/components/zl-checkbox/index.vue'
+import ZlConfirm from './src/components/zl-confirm/index.vue'
+import ZlConfirmPlugin from './src/plugins/zl-confirm.js'
 import ZlDialog from './src/components/zl-dialog/index.vue'
 import ZlDialogPlugin from './src/plugins/zl-dialog.js'
 import ZlLoading from './src/components/zl-loading/index.vue'
@@ -14,6 +16,8 @@ import ZlToastPlugin from './src/plugins/zl-toast.js'
 export {
   ZlCalendar,
   ZlCheckbox,
+  ZlConfirm,
+  ZlConfirmPlugin,
   ZlDialog,
   ZlDialogPlugin,
   ZlLoading,
@@ -23,5 +27,5 @@ export {
   ZlSlideDelete,
   ZlSwitch,
   ZlToast,
-  ZlToastPlugin
+  ZlToastPlugin,
 }

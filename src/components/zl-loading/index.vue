@@ -3,8 +3,8 @@
   <transition enter-active-class="fadeIn" leave-active-class="fadeOut">
     <div class="modal animated" v-show="show" @touchmove.stop="" @click="hide" :style="maskStyle"></div>
   </transition>
-  <div class='container' v-show="show" :style="mask">
-    <vue-lottie :options="defaultOptions" v-if="type == 'three-rhombus'" :width="40" :height="30"></vue-lottie>
+  <div class='container' v-show="show" :style="maskLoad">
+    <vue-lottie :options="defaultOptions" v-if="type == 'three-rhombus'" :width="50" :height="30"></vue-lottie>
     <div class="circle" v-if="type == 'circle'">
       <div class="loading"></div>
       <div class="loading"></div>
@@ -54,27 +54,10 @@ export default {
     vueLottie
   },
   computed:{
-    maskStyle () {
-      let zIndex = 1000;
-      if (typeof this.maskZIndex !== 'undefined') {
-        zIndex = this.maskZIndex
-      }
+    maskLoad(){
       return {
-        zIndex
-      }
-    },
-    mask(){
-      let zIndex = 1001,
-          background = 'background: rgba(0,0,0,.6)';
-      if (typeof this.maskZIndex !== 'undefined') {
-        zIndex = this.maskZIndex + 1
-      }
-      if(typeof this.background !== 'undefined'){
-        background = this.background
-      }
-      return {
-        zIndex,
-        background
+        background:this.background,
+        ...this.mask
       }
     }
   },
@@ -85,7 +68,11 @@ export default {
     },
     text:{
       type:String,
-      default: '????'
+      default: '正在加载'
+    },
+    background:{
+      type: String,
+      default: ''
     }
   },
   data(){
@@ -238,7 +225,7 @@ div:hover {
 .container{
   position: fixed;
   width: 100px;
-  height:150px;
+  height:120px;
   left:50%;
   top:50%;
   border-radius: 3px;

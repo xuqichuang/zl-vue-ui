@@ -1,0 +1,106 @@
+.setTopLine{
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 1px;
+  border-top: 1px solid #C7C7C7;
+  color: #C7C7C7;
+  transform-origin: 0 0;
+  transform: scaleY(0.5);
+}
+
+.setBottomLine {
+  content: " ";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 1px;
+  border-bottom: 1px solid #C7C7C7;
+  color: #C7C7C7;
+  transform-origin: 0 100%;
+  transform: scaleY(0.5);
+}
+
+.setLeftLine {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1px;
+  bottom: 0;
+  border-left: 1px solid #C7C7C7;
+  color: #C7C7C7;
+  transform-origin: 0 0;
+  transform: scaleX(0.5);
+}
+
+.setRightLine{
+  content: " ";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 1px;
+  bottom: 0;
+  border-right: 1px solid #C7C7C7;
+  color: #C7C7C7;
+  transform-origin: 100% 0;
+  transform: scaleX(0.5);
+}
+.setLine {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 200%;
+  border: 1px solid #C7C7C7;
+  color: #C7C7C7;
+  height: 200%;
+  transform-origin: left top;
+  transform: scale(0.5);
+}
+
+.zl-1px, .zl-1px-t, .zl-1px-b, .zl-1px-tb, .zl-1px-l, .zl-1px-r {
+  position: relative;
+}
+
+.zl-1px {
+  &:before {
+    .setLine();
+  }
+}
+
+.zl-1px-t {
+  &:before {
+    .setTopLine();
+  }
+}
+
+.zl-1px-b {
+  &:after {
+    .setBottomLine();
+  }
+}
+
+.zl-1px-tb {
+  &:before {
+    .setTopLine();
+  }
+  &:after {
+    .setBottomLine();
+  }
+}
+
+.zl-1px-l {
+  &:before {
+    .setLeftLine();
+  }
+}
+
+.zl-1px-r {
+  &:after {
+    .setRightLine();
+  }
+}

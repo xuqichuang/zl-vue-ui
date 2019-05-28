@@ -4,8 +4,8 @@
     <div class="modal animated" v-show="show" @touchmove.stop="" @click="hide" :style="maskStyle"></div>
   </transition>
   <div class="toast animated" v-show="show">
-    <vue-lottie :options="defaultOptions" :width="40" :height="40" v-if="type == 'three-rhombus'"></vue-lottie>
-    <span>{{text}}</span>
+    <vue-lottie :options="defaultOptions" :width="50" :height="30" v-if="type == 'three-rhombus'"></vue-lottie>
+    <span class="text">{{text}}</span>
   </div>
 </div>
 </template>
@@ -33,22 +33,6 @@ export default {
   data(){
     return {
       defaultOptions:{animationData: animationData}
-    }
-  },
-  computed:{
-    maskStyle () {
-      if (typeof this.maskZIndex !== 'undefined') {
-        return {
-          zIndex: this.maskZIndex
-        }
-      }
-    },
-    mask(){
-      if (typeof this.maskZIndex !== 'undefined') {
-        return {
-          zIndex: this.maskZIndex + 1
-        }
-      }
     }
   },
   watch:{
@@ -83,5 +67,9 @@ export default {
   border-radius: 4px;
   background: rgba(0, 0, 0, 0.65);
   z-index: 2000;
+  text-align: center;
+  .text{
+    font-size: 14px;
+  }
 }
 </style>

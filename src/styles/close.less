@@ -1,0 +1,32 @@
+.zl_close{
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border:1px solid #eee;
+  transform: translate(-50%,50%);
+  left:50%;
+  position: absolute;
+  bottom: 25px;
+  &:before{
+    content:'';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    height: 15px;
+    width: 1px;
+    background: #eee;
+    transform: translate(-50%,-50%) rotate(45deg);
+  }
+  &:after{
+    content:'';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    height: 15px;
+    width: 1px;
+    background: #eee;
+    transform: translate(-50%,-50%) rotate(-45deg);
+  }
+}

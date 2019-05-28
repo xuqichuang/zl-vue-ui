@@ -1,4 +1,5 @@
 import zlDialogComponent from '../components/zl-dialog'; 
+import { mergeOptions } from '../libs/plugin-helper'
 let $vm;
 export default {
   install(Vue, options){
@@ -11,10 +12,17 @@ export default {
     }
     $vm.show = false;
     let dialog = {
-        show(type, content) {
-            $vm.show = true;
-            $vm.type = type;
-            $vm.content = content;
+        show(options = {}) {
+          if (typeof options === 'object') {
+            mergeOptions($vm, options)
+            options.show && options.show()
+          }
+          $vm.$off('on-hide')
+          $vm.$on('on-hide', () => {
+            $vm.show = false;
+            options && options.onHide && $vm.onHide()
+          })
+          $vm.show = true;
         },
         hide() {
             $vm.show = false;

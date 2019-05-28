@@ -1,4 +1,5 @@
 import zlLoadingComponent from '../components/zl-loading'; 
+import { mergeOptions } from '../libs/plugin-helper'
 let $vm;
 export default {
   install(Vue, options){
@@ -16,9 +17,7 @@ export default {
             $vm.text = options;
             $vm.background = '';
           }else if (typeof options === 'object') {
-            $vm.type = options.type || 'three-rhombus';
-            $vm.text = options.text || '正在加载­';
-            $vm.background = options.background || '';
+            mergeOptions($vm, options)
           }
           $vm.show = true;
         },

@@ -21,6 +21,8 @@ Vue.use(zlVueUi)
 import {
   ZlCalendar,
   ZlCheckbox,
+  ZlConfirm,
+  ZlConfirmPlugin,
   ZlDialog,
   ZlDialogPlugin,
   ZlLoading,
@@ -36,6 +38,7 @@ import {
 ## 以下是主要组件
 **目前内部的组件**
 - ZlCalendar 日历组件，仿照美团酒店编写的日历组件，支持单选和双选 [git源文件地址](https://github.com/xuqichuang/zl-calendar)
+- ZlConfirm 确认框
 - ZlCheckbox 多选框
 - ZlDialog dialog弹框
 - ZlLoading loading加载
