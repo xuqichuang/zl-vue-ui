@@ -6,6 +6,7 @@ import ZlConfirm from './src/components/zl-confirm/index.vue'
 import ZlConfirmPlugin from './src/plugins/zl-confirm.js'
 import ZlDialog from './src/components/zl-dialog/index.vue'
 import ZlDialogPlugin from './src/plugins/zl-dialog.js'
+import ZlDivider from './src/components/zl-divider/index.vue'
 import ZlLoading from './src/components/zl-loading/index.vue'
 import ZlLoadingPlugin from './src/plugins/zl-loading.js'
 import ZlRadio from './src/components/zl-radio/index.vue'
@@ -24,6 +25,7 @@ export {
   ZlConfirmPlugin,
   ZlDialog,
   ZlDialogPlugin,
+  ZlDivider,
   ZlLoading,
   ZlLoadingPlugin,
   ZlRadio,

@@ -27,6 +27,7 @@ import {
   ZlConfirmPlugin,
   ZlDialog,
   ZlDialogPlugin,
+  ZlDivider,
   ZlLoading,
   ZlLoadingPlugin,
   ZlRadio,
@@ -44,6 +45,7 @@ import {
 - ZlConfirm confirm提示框
 - ZlCheckbox 多选框
 - ZlDialog dialog弹框
+- ZlDivider 分割线
 - ZlLoading loading加载
 - ZlRadio 单选框
 - ZlRange 价格滑块，双向滑动 [git源文件地址](https://github.com/xuqichuang/zl-range)
@@ -284,6 +286,17 @@ methods:{
 > 参数说明
 
 background: 弹框背景色
+
+
+### ZlDivider
+> 分割线
+###### 使用方法
+
+> html
+```
+<zl-divider>我是有底线的</zl-divider>
+```
+
 
 ### ZlLoading
 > loading加载
