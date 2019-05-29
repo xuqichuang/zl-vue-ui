@@ -15,7 +15,6 @@ export default {
         show(options = {}) {
           if( typeof options === 'string'){
             $vm.text = options;
-            $vm.background = '';
           }else if (typeof options === 'object') {
             mergeOptions($vm, options)
           }

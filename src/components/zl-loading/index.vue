@@ -4,7 +4,7 @@
     <div class="modal animated" v-show="show" @touchmove.stop="" @click="hide" :style="maskStyle"></div>
   </transition>
   <div class='container' v-show="show" :style="maskLoad">
-    <vue-lottie :options="defaultOptions" v-if="type == 'three-rhombus'" :width="50" :height="30"></vue-lottie>
+    <vue-lottie :options="defaultOptions" v-if="type == 'three-rhombus'" :width="60" :height="30"></vue-lottie>
     <div class="circle" v-if="type == 'circle'">
       <div class="loading"></div>
       <div class="loading"></div>
