@@ -1,7 +1,7 @@
 <template>
 <div>
   <transition enter-active-class="fadeIn" leave-active-class="fadeOut">
-    <div class="modal animated" v-show="show" @touchmove.stop="" @click="hide" :style="maskStyle"></div>
+    <div class="modal animated" v-show="show" :style="maskStyle"></div>
   </transition>
   <div class='container' v-show="show" :style="maskLoad">
     <vue-lottie :options="defaultOptions" v-if="type == 'three-rhombus'" :width="60" :height="30"></vue-lottie>

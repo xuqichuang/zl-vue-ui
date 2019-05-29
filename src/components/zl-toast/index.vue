@@ -1,14 +1,12 @@
 <template>
 <div>
   <transition enter-active-class="fadeIn" leave-active-class="fadeOut">
-    <div class="modal animated" v-show="show" @touchmove.stop="" @click="hide" :style="maskStyle"></div>
+    <div class="modal animated" v-show="show" :style="maskStyle"></div>
   </transition>
-  <transition enter-active-class="fadeIn" leave-active-class="fadeOut">
-    <div class="toast animated" v-show="show">
-      <vue-lottie :options="defaultOptions" :width="50" :height="30" v-if="type == 'three-rhombus'"></vue-lottie>
-      <span class="text">{{text}}</span>
-    </div>
-  </transition>
+  <div class="toast" v-show="show">
+    <vue-lottie :options="defaultOptions" :width="50" :height="30" v-if="type == 'three-rhombus'" v-on:animCreated="handleAnimation"></vue-lottie>
+    <span class="text">{{text}}</span>
+  </div>
 </div>
 </template>
 
@@ -37,6 +35,11 @@ export default {
       defaultOptions:{animationData: animationData}
     }
   },
+  methods:{
+    handleAnimation: function (anim) {
+      this.anim = anim;
+    },
+  },
   watch:{
     show(val){
       if(val){
@@ -60,13 +63,23 @@ export default {
   transform: translate(-50%, -50%);
   transform-origin: 0% 0%;
   color: #fff;
-  display: inline-block;
   padding: 20px;
   border-radius: 4px;
   background: rgba(0, 0, 0, 0.65);
   z-index: 2000;
   text-align: center;
-  .animate-t;
+  min-width: 50px;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  .toast-img{
+    width: 60px;
+    img{
+      width: 100%;
+    }
+  }
   .text{
     font-size: 14px;
   }
