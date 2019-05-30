@@ -3,8 +3,8 @@
   <transition enter-active-class="fadeIn" leave-active-class="fadeOut">
     <div class="modal animated" v-show="show" :style="maskStyle"></div>
   </transition>
-  <div class="toast" v-show="show">
-    <vue-lottie :options="defaultOptions" :width="50" :height="30" v-if="type == 'three-rhombus'" v-on:animCreated="handleAnimation"></vue-lottie>
+  <div class="toast" v-show="show" :style="computedStyle">
+    <vue-lottie :options="defaultOptions" :width="50" :height="30" v-if="type == 'rhombus'" v-on:animCreated="handleAnimation"></vue-lottie>
     <span class="text">{{text}}</span>
   </div>
 </div>
@@ -21,8 +21,7 @@ export default {
   },
   props: {
     type:{
-      type: String,
-      default: 'three-rhombus'
+      type: String
     },
     time:{
       type: Number,
@@ -33,6 +32,19 @@ export default {
   data(){
     return {
       defaultOptions:{animationData: animationData}
+    }
+  },
+  computed:{
+    computedStyle(){
+      if(!this.type){
+        return {
+          minWidth: '165px'
+        }
+      }else{
+        return{
+          minWidth: '50px'
+        }
+      }
     }
   },
   methods:{
@@ -63,13 +75,11 @@ export default {
   transform: translate(-50%, -50%);
   transform-origin: 0% 0%;
   color: #fff;
-  padding: 20px;
+  padding: 11px 15px;
   border-radius: 4px;
   background: rgba(0, 0, 0, 0.65);
   z-index: 2000;
   text-align: center;
-  min-width: 50px;
-  min-height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;

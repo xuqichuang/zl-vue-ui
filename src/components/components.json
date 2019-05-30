@@ -1,0 +1,19 @@
+{
+  "ZlAlert": "./src/components/zl-alert/index.vue",
+  "ZlAlertPlugin": "./src/plugins/zl-alert.js",
+  "ZlCalendar": "./src/components/zl-calendar/index.vue",
+  "ZlCheckbox": "./src/components/zl-checkbox/index.vue",
+  "ZlConfirm": "./src/components/zl-confirm/index.vue",
+  "ZlConfirmPlugin": "./src/plugins/zl-confirm.js",
+  "ZlDialog": "./src/components/zl-dialog/index.vue",
+  "ZlDialogPlugin": "./src/plugins/zl-dialog.js",
+  "ZlDivider": "./src/components/zl-divider/index.vue",
+  "ZlLoading": "./src/components/zl-loading/index.vue",
+  "ZlLoadingPlugin": "./src/plugins/zl-loading.js",
+  "ZlRadio": "./src/components/zl-radio/index.vue",
+  "ZlRange": "./src/components/zl-range/index.vue",
+  "ZlSlideDelete": "./src/components/zl-slide-delete/index.vue",
+  "ZlSwitch": "./src/components/zl-switch/index.vue",
+  "ZlToast": "./src/components/zl-toast/index.vue",
+  "ZlToastPlugin": "./src/plugins/zl-toast.js"
+}
