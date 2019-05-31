@@ -4,7 +4,7 @@
     <div class="modal animated" v-show="show" :style="maskStyle"></div>
   </transition>
   <div class='container' v-show="show" :style="maskLoad">
-    <vue-lottie :options="defaultOptions" v-if="type == 'three-rhombus'" :width="60" :height="30"></vue-lottie>
+    <vue-lottie :options="defaultOptions" v-if="type == 'rhombus'" :width="60" :height="30"></vue-lottie>
     <div class="circle" v-if="type == 'circle'">
       <div class="loading"></div>
       <div class="loading"></div>
@@ -64,7 +64,7 @@ export default {
   props: {
     type:{
       type:String,
-      default:'three-rhombus'
+      default:'rhombus'
     },
     text:{
       type:String,
