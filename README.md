@@ -33,6 +33,8 @@ import {
   ZlDivider,
   ZlLoading,
   ZlLoadingPlugin,
+  ZlNotify,
+  ZlNotifyPlugin,
   ZlRadio,
   ZlRange,
   ZlRow,
@@ -54,6 +56,7 @@ import {
 - ZlDialog dialog弹框
 - ZlDivider 分割线
 - ZlLoading loading加载
+- ZlNotify Notify消息提示
 - ZlRadio 单选框
 - ZlRange 价格滑块，双向滑动 [git源文件地址](https://github.com/xuqichuang/zl-range)
 - ZlRow layout布局父级块
@@ -295,6 +298,7 @@ methods:{
 ###### 使用方法
 
 > html
+
 ```
 <zl-row :gutter="20" align="center" :bottom="10" justify="space-between">
   <zl-col class="col" :span="6" offset="4">col</zl-col>
@@ -328,6 +332,7 @@ methods:{
 ###### 使用方法
 
 > html
+
 ```
 <zl-switch v-model="show"></zl-switch>
 <zl-confirm v-model="show" title="标题" content="内容"></zl-confirm>
@@ -384,6 +389,7 @@ data:{
 ###### 使用方法
 
 > html
+
 ```
 <zl-dialog v-model="show"  @change="change"></zl-dialog>
 ```
@@ -429,12 +435,13 @@ background: 弹框背景色
 ###### 使用方法
 
 > html
+
 ```
 <zl-divider>我是有底线的</zl-divider>
 ```
 
 
-### ZlLoading
+### ZlLoadingPlugin
 > loading加载
 ###### 使用方法
 
@@ -452,11 +459,76 @@ text 目前可选文字:  自己定义的 text值, 默认 加载中
 background 背景颜色，默认无背景色，支持自定义 
 
 
+### ZlNotify
+> notify提示
+###### 使用方法
+
+> html
+
+```
+<zl-switch v-model="show"></zl-switch>
+<zl-notify v-model="show" @change="change" text="提示文案"/>
+```
+> js
+
+```
+data:{
+    show: false
+},
+methods:{
+    change(val){
+        
+    }
+}
+```
+> 属性
+
+|名字 | 类型 | 默认值 | 说明 | 版本要求|
+|---|---|---|---|---|
+|show | Boolean | false | 控制notify显示，使用v-model绑定 |--|
+|time | Number | 2000 | 显示时间 |--|
+|text | String | -- | 提示文字 |--|
+|height | String | 50 | 提示高度 |--|
+|color | String | #fff | 提示颜色 |--|
+|background | String | #f44 | 提示背景颜色 |--|
+|enterClass | String | bounceInDown | 显示动画效果，更改动画效果请参考animate.css |--|
+|leaveClass | String | slideOutUp | 隐藏动画效果，更改动画效果请参考animate.css |--|
+
+> 事件
+
+|名字 | 参数 |  说明 | 版本要求|
+|------|------|------|------|
+|change|(Boolean)|notify显示状态切换|--|
+
+### ZlNotifyPlugin
+> notify提示
+###### 使用方法
+
+> 方法
+
+|名字 | 参数 |  说明 | 版本要求|
+|---|---|---|---|
+|this.$zhenlv.notify.show() | 参考以下show()参数说明 | notify显示 |--|
+|this.$zhenlv.toast.hide() | -- | notify关闭 |--|
+
+> show 参数说明
+
+|名字 | 类型 | 默认值 | 说明 | 版本要求|
+|---|---|---|---|---|
+|time | Number | 2000 | 显示时间 |--|
+|text | String | -- | 提示文字 |--|
+|height | String | 50 | 提示高度 |--|
+|color | String | #fff | 提示颜色 |--|
+|background | String | #f44 | 提示背景颜色 |--|
+|enterClass | String | bounceInDown | 显示动画效果，更改动画效果请参考animate.css |--|
+|leaveClass | String | slideOutUp | 隐藏动画效果，更改动画效果请参考animate.css |--|
+
 ### ZlRadio
 > 单选框
 ###### 使用方法
 
 > html
+
 ```
 <zl-radio v-model="checked" @change="change"></zl-radio>
 ```
@@ -492,6 +564,7 @@ methods:{
 ###### 使用方法
 
 > html
+
 ```
 <v-range
   :max="rangeOptions.max"
@@ -558,6 +631,7 @@ methods:{
 ###### 使用方法
 
 > html
+
 ```
 <zl-slide-delete 
   :options="dataList"
@@ -630,6 +704,7 @@ methods:{
 ###### 使用方法
 
 > html
+
 ```
 <zl-switch v-model="checked" @change="change"></zl-switch>
 ```
@@ -662,7 +737,7 @@ methods:{
 
 
 
-### ZlToast
+### ZlToastPlugin
 > toast提示
 ###### 使用方法
 
