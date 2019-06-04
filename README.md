@@ -226,13 +226,24 @@ methods:{
 |-------------|-------------|-----|-------------|-------------|
 |title | String | -- | 标题|--|
 |ftitle | String | -- | 副标题 |--|
-|value | String | -- | 内容 |--|
+|value | String | -- | 内容 (valueType为input时使用 v-model绑定) |--|
 |label | String | -- | 描述信息 |--|
 |arrow | String | 'right' | 箭头方向（isLink为true时显示箭头） |--|
 |isLink | Boolean | false | 是否带跳转 |--|
 |valueType | String | 'text' | 内容类型（可选 'text', 'input'） |--|
 |center |Boolean | true | 内容是否居中 |--|
 |placeholder |String | -- | valueType为input时展示 |--|
+
+> 插槽
+
+|名字  | 说明 | 版本要求|
+|------|------|------|
+|title-left | 标题左侧插槽 |--|
+|title-right | 标题右侧插槽 |--|
+|label | 内容描述插槽 |--|
+|text-left | 内容左侧插槽 |--|
+|text-right | 内容右侧插槽 |--|
+
 
 
 > 事件
