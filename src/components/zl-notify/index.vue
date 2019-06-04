@@ -38,7 +38,7 @@ export default {
     },
     height:{
       type: [String, Number],
-      default: 50
+      default: 40
     }
   },
   model:{

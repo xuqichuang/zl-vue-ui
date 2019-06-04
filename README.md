@@ -19,6 +19,7 @@ Vue.use(zlVueUi)
 
 ```
 import {
+  ZlActionSheet,
   ZlAlert,
   ZlAlertPlugin,
   ZlCalendar,
@@ -47,6 +48,7 @@ import {
 ## 以下是主要组件
 **目前内部的组件**
 - ZlCalendar 日历组件，仿照美团酒店编写的日历组件，支持单选和双选 [git源文件地址](https://github.com/xuqichuang/zl-calendar)
+- ZlActionSheet 上拉菜单
 - ZlAlert alert提示框
 - ZlConfirm confirm提示框
 - ZlCell, 单元格
@@ -63,6 +65,63 @@ import {
 - ZlSlideDelete 左滑删除 [git源文件地址](https://github.com/xuqichuang/zl-slide-delete)
 - ZlSwitch switch选择器
 - ZlToast toast提示
+
+
+### ZlActionSheet
+> 上拉菜单
+###### 使用方法
+
+> html
+```
+<zl-switch v-model="show"></zl-switch>
+<zl-action-sheet :options="actionOptions" v-model="show" disabled="disabled" @on-cancel="cancel" @on-select="select"></zl-action-sheet>
+```
+> js
+
+```
+data:{
+    show: false,
+    actionOptions: [{
+        name: '标题1',
+        id: 123,
+        disabled:true
+    },{
+        name: '标题2',
+        id: 1234
+    },{
+        name: '标题3',
+        id: 1235
+    }],
+},
+methods:{
+    cancel(){
+
+    },
+    select(item, index){
+
+    }
+}
+```
+> 属性
+
+
+|名字 | 类型 | 默认值 | 说明 | 版本要求|
+|-------------|-------------|-----|-------------|-------------|
+|background | String | rgba(0,0,0,.6) | 模态框背景颜色 |--|
+|options | Array | -- | actionsheet 列表 |--|
+|name | String | name | 列表标题，定义显示的标题字段，必填 |--|
+|desc | String | desc | 列表副标题，定义显示的副标题字段，没有则不显示 |--|
+|cancelText | String | '' | 取消按钮 |--|
+|disabled | String | disabled | 列表是否可选中，定义不支持选中字段，没有这个字段则支持选中 |--|
+|itemClickHide | Boolean | true | 选中列表关闭 |--|
+
+> 事件
+
+|名字 | 参数 |  说明 | 版本要求|
+|------|------|------|------|
+|on-select|(item, index)|列表选中时触发，item: 选中的对象, index：选中的下标值|--|
+|on-cancel|--|点击取消时触发|--|
+
 
 ### ZlAlert
 > alert 提示框
@@ -488,7 +547,7 @@ methods:{
 |show | Boolean | false | 控制notify显示，使用v-model绑定 |--|
 |time | Number | 2000 | 显示时间 |--|
 |text | String | -- | 提示文字 |--|
-|height | String | 50 | 提示高度 |--|
+|height | String | 40 | 提示高度 |--|
 |color | String | #fff | 提示颜色 |--|
 |background | String | #f44 | 提示背景颜色 |--|
 |enterClass | String | bounceInDown | 显示动画效果，更改动画效果请参考animate.css |--|
@@ -517,7 +576,7 @@ methods:{
 |---|---|---|---|---|
 |time | Number | 2000 | 显示时间 |--|
 |text | String | -- | 提示文字 |--|
-|height | String | 50 | 提示高度 |--|
+|height | String | 40 | 提示高度 |--|
 |color | String | #fff | 提示颜色 |--|
 |background | String | #f44 | 提示背景颜色 |--|
 |enterClass | String | bounceInDown | 显示动画效果，更改动画效果请参考animate.css |--|

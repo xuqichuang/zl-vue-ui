@@ -1,3 +1,4 @@
+import ZlActionSheet from './src/components/zl-action-sheet/index.vue'
 import ZlAlert from './src/components/zl-alert/index.vue'
 import ZlAlertPlugin from './src/plugins/zl-alert.js'
 import ZlCalendar from './src/components/zl-calendar/index.vue'
@@ -12,6 +13,8 @@ import ZlDialogPlugin from './src/plugins/zl-dialog.js'
 import ZlDivider from './src/components/zl-divider/index.vue'
 import ZlLoading from './src/components/zl-loading/index.vue'
 import ZlLoadingPlugin from './src/plugins/zl-loading.js'
+import ZlNotify from './src/components/zl-notify/index.vue'
+import ZlNotifyPlugin from './src/plugins/zl-notify.js'
 import ZlRadio from './src/components/zl-radio/index.vue'
 import ZlRange from './src/components/zl-range/index.vue'
 import ZlRow from './src/components/zl-row/index.vue'
@@ -21,6 +24,7 @@ import ZlToast from './src/components/zl-toast/index.vue'
 import ZlToastPlugin from './src/plugins/zl-toast.js'
 
 export {
+  ZlActionSheet,
   ZlAlert,
   ZlAlertPlugin,
   ZlCalendar,
@@ -35,6 +39,8 @@ export {
   ZlDivider,
   ZlLoading,
   ZlLoadingPlugin,
+  ZlNotify,
+  ZlNotifyPlugin,
   ZlRadio,
   ZlRange,
   ZlRow,
