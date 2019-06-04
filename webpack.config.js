@@ -1,9 +1,106 @@
 var path = require('path')
 var webpack = require('webpack')
+const merge = require('webpack-merge')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+
+let cssLoaders = function (options) {
+  options = options || {}
+
+  const cssLoader = {
+    loader: 'css-loader',
+    options: {
+      minimize: process.env.NODE_ENV === 'production',
+      sourceMap: options.sourceMap
+    }
+  }
+
+  const px2remLoader = {
+    loader: 'px2rem-loader',
+    options: {
+      remUnit: 37.5
+    }
+  }
+
+  var postcssLoader = {
+    loader: 'postcss-loader',
+    options: {
+      sourceMap: options.sourceMap
+    }
+  }
+  function lessResourceLoader() {
+    var loaders = [
+      cssLoader,
+      'less-loader',
+      {
+        loader: 'sass-resources-loader',
+        options: {
+          resources: [
+            path.resolve(__dirname, '../src/common/less/theme.less'),// 这里的路径即是我们定义全局变量的地方
+          ]
+        }
+      }
+    ];
+    if (options.extract) {
+      return ExtractTextPlugin.extract({
+        use: loaders,
+        fallback: 'vue-style-loader'
+      })
+    } else {
+      return ['vue-style-loader'].concat(loaders)
+    }
+  }
+  // generate loader string to be used with extract text plugin
+  function generateLoaders (loader, loaderOptions) {
+    const loaders = options.usePostCSS ? [cssLoader, postcssLoader, px2remLoader] : [cssLoader, px2remLoader]
+    if (loader) {
+      loaders.push({
+        loader: loader + '-loader',
+        options: Object.assign({}, loaderOptions, {
+          sourceMap: options.sourceMap
+        })
+      })
+    }
+
+    // Extract CSS when that option is specified
+    // (which is the case during production build)
+    if (options.extract) {
+      return ExtractTextPlugin.extract({
+        use: loaders,
+        fallback: 'vue-style-loader'
+      })
+    } else {
+      return ['vue-style-loader'].concat(loaders)
+    }
+  }
+
+  // https://vue-loader.vuejs.org/en/configurations/extract-css.html
+  return {
+    css: generateLoaders(),
+    postcss: generateLoaders(),
+    less: lessResourceLoader(),
+    sass: generateLoaders('sass', { indentedSyntax: true }),
+    scss: generateLoaders('sass'),
+    stylus: generateLoaders('stylus'),
+    styl: generateLoaders('stylus')
+  }
+}
+
+let styleLoaders = function (options) {
+  const output = []
+  const loaders = cssLoaders(options)
+  for (const extension in loaders) {
+    const loader = loaders[extension]
+    output.push({
+      test: new RegExp('\\.' + extension + '$'),
+      use: loader
+    })
+  }
+  return output
+}
 
 module.exports = {
   // entry: './src/main.js',
-  entry: './index.js',
+  entry: ['./index.js'],
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
@@ -21,7 +118,8 @@ module.exports = {
           'vue-style-loader',
           'css-loader'
         ],
-      },      {
+      },
+      {
         test: /\.vue$/,
         loader: 'vue-loader',
         options: {
@@ -62,6 +160,15 @@ module.exports = {
   devtool: '#eval-source-map'
 }
 
+// module.exports = merge(baseWebpackConfig, {
+//   module: {
+//     rules: styleLoaders({
+//       sourceMap: false,
+//       extract: true,
+//       usePostCSS: true
+//     })
+//   },
+// })
 if (process.env.NODE_ENV === 'production') {
   module.exports.devtool = '#source-map'
   // http://vue-loader.vuejs.org/en/workflow/production.html

@@ -4,7 +4,7 @@
     <div class="modal animated" v-show="show" :style="maskStyle"></div>
   </transition>
   <div class="toast" v-show="show" :style="computedStyle">
-    <vue-lottie :options="defaultOptions" :width="50" :height="30" v-if="type == 'rhombus'" v-on:animCreated="handleAnimation"></vue-lottie>
+    <vue-lottie :options="defaultOptions" :width="60" :height="38" v-if="type == 'rhombus'" v-on:animCreated="handleAnimation"></vue-lottie>
     <span class="text">{{text}}</span>
   </div>
 </div>
@@ -75,7 +75,7 @@ export default {
   transform: translate(-50%, -50%);
   transform-origin: 0% 0%;
   color: #fff;
-  padding: 11px 15px;
+  padding: 15px;
   border-radius: 4px;
   background: rgba(0, 0, 0, 0.65);
   z-index: 2000;

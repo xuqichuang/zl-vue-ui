@@ -3,7 +3,7 @@
   "description": "臻旅UI组件",
   "version": "1.0.18",
   "author": "徐其闯 <xqc1319681561@163.com>",
-  "main": "dist/zl-vue-ui.js",
+  "main": "index.js",
   "license": "MIT",
   "private": false,
   "scripts": {
@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "better-scroll": "^1.14.1",
+    "lib-flexible": "^0.3.2",
     "moment": "^2.24.0",
     "vue": "^2.5.11",
     "vue-lottie": "^0.2.1"
@@ -38,14 +39,19 @@
     "babel-preset-stage-3": "^6.24.1",
     "cross-env": "^5.0.5",
     "css-loader": "^0.28.7",
+    "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.4",
     "less": "^3.9.0",
     "less-loader": "^5.0.0",
     "node-sass": "^4.9.3",
+    "postcss-loader": "^3.0.0",
+    "postcss-pxtorem": "^4.0.1",
+    "px2rem-loader": "^0.1.9",
     "sass-loader": "^7.1.0",
     "vue-loader": "^13.0.5",
     "vue-template-compiler": "^2.4.4",
     "webpack": "^3.6.0",
-    "webpack-dev-server": "^2.9.1"
+    "webpack-dev-server": "^2.9.1",
+    "webpack-merge": "^4.2.1"
   }
 }
