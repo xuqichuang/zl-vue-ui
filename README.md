@@ -26,6 +26,7 @@ import {
   ZlCell,
   ZlCellGroup,
   ZlCheckbox,
+  ZlCircle,
   ZlCol,
   ZlConfirm,
   ZlConfirmPlugin,
@@ -47,13 +48,14 @@ import {
 ```
 ## 以下是主要组件
 **目前内部的组件**
-- ZlCalendar 日历组件，仿照美团酒店编写的日历组件，支持单选和双选 [git源文件地址](https://github.com/xuqichuang/zl-calendar)
+- ZlCalendar 日历组件，支持单选和双选 [git源文件地址](https://github.com/xuqichuang/zl-calendar)
 - ZlActionSheet 上拉菜单
 - ZlAlert alert提示框
 - ZlConfirm confirm提示框
 - ZlCell, 单元格
 - ZlCellGroup, 单元格组
 - ZlCheckbox 多选框
+- ZlCircle 环形进度条
 - ZlCol layout布局列表块
 - ZlDialog dialog弹框
 - ZlDivider 分割线
@@ -350,6 +352,49 @@ methods:{
 |名字 | 参数 |  说明 | 版本要求|
 |---|---|---|---|
 |change | (Boolean) | 切换选中样式时触发 |--|
+
+### ZlCircle
+> 环形进度条
+###### 使用方法
+
+> html
+```
+<zl-circle
+    :percent="percent"
+    :stroke-color="['#04BE02', '#3FC7FA']">
+    <span>{{ percent }}%</span>
+</zl-circle>
+<button @click="circleClick">circle增加</button>
+```
+> js
+
+```
+data:{
+    percent: 0
+},
+methods:{
+    circleClick(){
+      this.percent += 10
+    },
+}
+```
+> 属性
+
+|名字 | 类型 | 默认值 | 说明 | 版本要求|
+|-------------|-------------|-----|-------------|-------------|
+|strokeWidth | Number | 5 | 描边宽度 |--|
+|strokeColor | [String,Array] | #3FC7FA | 描边颜色，数组格式为渐变颜色，目前只支持2种颜色渐变 |--|
+|trailWidth | Number | 5 | 背景线条宽度 |--|
+|trailColor | String | #D9D9D9 | 背景线条颜色 |--|
+|percent | Number | 0 | 进度百分比 |--|
+|strokeLinecap | String | round | 路径两端的形状，可选属性 butt | round | square | inherit | |--|
+|anticlockwise | Boolean | false | 按逆时针方向展示百分比， false:顺时针，true:逆时针 |--|
+
+> 插槽
+
+|名字 | 说明 | 版本要求|
+|-------------|-------------|-------------|
+| 默认插槽 | 圆圈中间显示内容 |--|
 
 
 ### ZlRow ZlCol

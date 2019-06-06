@@ -5,6 +5,7 @@ import ZlCalendar from './src/components/zl-calendar/index.vue'
 import ZlCell from './src/components/zl-cell/index.vue'
 import ZlCellGroup from './src/components/zl-cell-group/index.vue'
 import ZlCheckbox from './src/components/zl-checkbox/index.vue'
+import ZlCircle from './src/components/zl-circle/index.vue'
 import ZlCol from './src/components/zl-col/index.vue'
 import ZlConfirm from './src/components/zl-confirm/index.vue'
 import ZlConfirmPlugin from './src/plugins/zl-confirm.js'
@@ -31,6 +32,7 @@ export {
   ZlCell,
   ZlCellGroup,
   ZlCheckbox,
+  ZlCircle,
   ZlCol,
   ZlConfirm,
   ZlConfirmPlugin,
