@@ -41,12 +41,13 @@ export default {
       created() {
         this.$zhenlv = Vue.$zhenlv;
       },
-      deactivated() {
-        this.$zhenlv.alert.hide()
-      },
-      destroyed() {
-        this.$zhenlv.alert.hide()
-      }
+      // 下面页面进入时会自动关闭不显示，所以弃用掉
+      // deactivated() {
+      //   this.$zhenlv.alert.hide()
+      // },
+      // destroyed() {
+      //   this.$zhenlv.alert.hide()
+      // }
     })
   }
 }
