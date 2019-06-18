@@ -62,8 +62,8 @@ span{
   line-height: 0;
 }
 input[type=checkbox] {
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   -webkit-appearance: none;
   background-color: transparent;
   border: 0;
@@ -74,8 +74,8 @@ input[type=checkbox] {
 input[type=checkbox]:before{
   content: "";
   display:block;
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   border: 1px solid #ddd;
   background-color: #fff;
   box-sizing:border-box;  
@@ -86,8 +86,8 @@ input[type=checkbox]:before{
 input[type=checkbox]:disabled:before{
   content: "";
   display:block;
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   border: 1px solid #bbb;
   background-color: #ddd;
   box-sizing:border-box;  
@@ -97,8 +97,8 @@ input[type=checkbox]:disabled:before{
 input[type=checkbox]:checked:before{
   content: "";
   display:block;
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   border: 1px solid #D2A47E;
   background-color: #D2A47E;
   box-sizing:border-box;  
