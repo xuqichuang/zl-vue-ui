@@ -169,7 +169,7 @@ export default {
 
 <style lang='less' scoped>
   .list{
-    border-bottom:1px solid #f3f4f8;
+    border-bottom:1Px solid #f3f4f8;
     position: relative;
     overflow: hidden;
     .swiper{

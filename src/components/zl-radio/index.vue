@@ -44,7 +44,7 @@ input[type=radio]:before{
   display:block;
   width: 20px;
   height: 20px;
-  border: 1px solid #ddd;
+  border: 1Px solid #ddd;
   background-color: #fff;
   box-sizing:border-box;  
   border-radius: 20px;
@@ -56,7 +56,7 @@ input[type=radio]:disabled:before{
   display:block;
   width: 20px;
   height: 20px;
-  border: 1px solid #bbb;
+  border: 1Px solid #bbb;
   background-color: #ddd;
   box-sizing:border-box;  
   border-radius: 20px;
@@ -67,7 +67,7 @@ input[type=radio]:checked:before{
   display:block;
   width: 20px;
   height: 20px;
-  border: 1px solid #D2A47E;
+  border: 1Px solid #D2A47E;
   background-color: #D2A47E;
   box-sizing:border-box;  
   border-radius: 20px;

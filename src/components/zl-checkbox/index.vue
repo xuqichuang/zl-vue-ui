@@ -76,7 +76,7 @@ input[type=checkbox]:before{
   display:block;
   width: 16px;
   height: 16px;
-  border: 1px solid #ddd;
+  border: 1Px solid #ddd;
   background-color: #fff;
   box-sizing:border-box;  
   border-radius: 2px;
@@ -88,7 +88,7 @@ input[type=checkbox]:disabled:before{
   display:block;
   width: 16px;
   height: 16px;
-  border: 1px solid #bbb;
+  border: 1Px solid #bbb;
   background-color: #ddd;
   box-sizing:border-box;  
   border-radius: 2px;
@@ -99,7 +99,7 @@ input[type=checkbox]:checked:before{
   display:block;
   width: 16px;
   height: 16px;
-  border: 1px solid #D2A47E;
+  border: 1Px solid #D2A47E;
   background-color: #D2A47E;
   box-sizing:border-box;  
   border-radius: 2px;

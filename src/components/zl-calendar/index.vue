@@ -472,7 +472,7 @@ export default {
               transform-origin: 0 100%;
               -webkit-transform: scaleY(0.5);
               transform: scaleY(0.5);
-              border-bottom:1px solid #ddd;
+              border-bottom:1Px solid #ddd;
             }
           }
           .day-container{

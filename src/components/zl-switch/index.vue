@@ -56,7 +56,7 @@ export default {
     display:block;
     width: 52px;
     height: 32px;
-    border: 1px solid #ddd;
+    border: 1Px solid #ddd;
     background-color: #fff;
     box-sizing:border-box;  
     border-radius: 32px;
@@ -69,7 +69,7 @@ export default {
     height: 30px;
     left:1px;
     top:1px;
-    border: 1px solid #fff;
+    border: 1Px solid #fff;
     background-color: #fff;
     box-sizing:border-box;  
     box-shadow: 0 1px 3px rgba(0,0,0,.4);
@@ -81,7 +81,7 @@ export default {
     display:block;
     width: 52px;
     height: 32px;
-    border: 1px solid #999;
+    border: 1Px solid #999;
     background-color: #999;
     box-sizing:border-box;  
     border-radius: 32px;
@@ -94,7 +94,7 @@ export default {
     height: 30px;
     left:1px;
     top:1px;
-    border: 1px solid #fff;
+    border: 1Px solid #fff;
     background-color: #fff;
     box-sizing:border-box;  
     box-shadow: 0 1px 3px rgba(0,0,0,.4);
@@ -106,7 +106,7 @@ export default {
     display:block;
     width: 52px;
     height: 32px;
-    border: 1px solid #D2A47E;
+    border: 1Px solid #D2A47E;
     background-color: #D2A47E;
     box-sizing:border-box;  
     border-radius: 32px;
@@ -120,7 +120,7 @@ export default {
     left:100%;
     -webkit-transform: translateX(-100%);
     transform: translateX(-100%);
-    border: 1px solid #fff;
+    border: 1Px solid #fff;
     background-color: #fff;
     box-sizing:border-box;  
     box-shadow: 0 1px 3px rgba(0,0,0,.4);
