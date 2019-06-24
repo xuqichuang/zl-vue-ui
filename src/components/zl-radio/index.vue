@@ -30,8 +30,8 @@ export default {
 </script>
 <style lang="less" scoped>
 input[type=radio] {
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   -webkit-appearance: none;
   background-color: transparent;
   border: 0;
@@ -42,47 +42,47 @@ input[type=radio] {
 input[type=radio]:before{
   content: "";
   display:block;
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   border: 1Px solid #ddd;
   background-color: #fff;
   box-sizing:border-box;  
-  border-radius: 20px;
+  border-radius: 16px;
   position: absolute;
 }
 
 input[type=radio]:disabled:before{
   content: "";
   display:block;
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   border: 1Px solid #bbb;
   background-color: #ddd;
   box-sizing:border-box;  
-  border-radius: 20px;
+  border-radius: 16px;
   position: absolute;
 }
 input[type=radio]:checked:before{
   content: "";
   display:block;
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   border: 1Px solid #D2A47E;
   background-color: #D2A47E;
   box-sizing:border-box;  
-  border-radius: 20px;
+  border-radius: 16px;
   position: absolute;
 }
 input[type=radio]:checked:after{
   content: "";
   display:block;
   width: 7.5px;
-  height: 15px;
+  height: 13.125px;
   border-left: 1.5px solid #fff;
   border-top: 1.5px solid #fff;
   border-radius:  1.5px;
   box-sizing:border-box; 
   position: absolute;
-  transform: rotate(-135deg) translate(-70%, 25%);
+  transform: rotate(-135deg) translate(-48%, 26%);
 }
 </style>

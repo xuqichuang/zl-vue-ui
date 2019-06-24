@@ -109,12 +109,12 @@ input[type=checkbox]:checked:after{
   content: "";
   display:block;
   width: 7.5px;
-  height: 15px;
+  height: 13.125px;
   border-left: 1.5px solid #fff;
   border-top: 1.5px solid #fff;
   border-radius:  1.5px;
   box-sizing:border-box; 
   position: absolute;
-  transform: rotate(-135deg) translate(-70%, 25%);
+  transform: rotate(-135deg) translate(-48%, 26%);
 }
 </style>
