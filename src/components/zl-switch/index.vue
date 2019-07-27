@@ -4,7 +4,7 @@
       <span v-if="checked">{{options.show}}</span>
       <span v-else>{{options.hide}}</span>
     </div>
-    <input class="zl-theme-checkbox"
+    <input class="zl-theme-switch"
       type="checkbox" 
       :checked="checked"
       :disabled="disabled"
