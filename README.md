@@ -1,4 +1,13 @@
+<div align="center">
+  
 # zl-vue-ui
+  
+![](https://img.shields.io/badge/build-passing-00d508.svg)
+![](https://img.shields.io/badge/version-1.0.27-3963bc.svg)
+![](https://img.shields.io/badge/license-MIT-3963bc.svg)
+
+</div>
+
 
 > 公司实际项目中编写的一些组件，后续会持续更新，有不足的地方希望大家提出宝贵意见，大家共同进步, 主要组件如下
 
