@@ -5,7 +5,6 @@
 ![GitHub](https://img.shields.io/github/license/xuqichuang/zl-vue-ui?color=linear-gradient%28-180deg%2C%232fcb53%2C%23269f42%2090%25%29&logo=github)
 ![npm](https://img.shields.io/npm/v/zl-vue-ui?logo=npm)
 ![NPM](https://img.shields.io/npm/l/zl-vue-ui)
-![Libraries.io dependency status for GitHub repo](https://img.shields.io/librariesio/github/xuqichuang/zl-vue-ui)
 
 </div>
 
