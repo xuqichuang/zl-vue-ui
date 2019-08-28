@@ -6,10 +6,10 @@
 ![npm](https://img.shields.io/npm/v/zl-vue-ui?logo=npm) 
 ![GitHub issues](https://img.shields.io/github/issues/xuqichuang/zl-vue-ui) 
 
-![Libraries.io dependency status for GitHub repo](https://img.shields.io/librariesio/github/xuqichuang/zl-vue-ui)  
-![GitHub All Releases](https://img.shields.io/github/downloads/xuqichaung/zl-vue-ui/total)  
-![npm](https://img.shields.io/npm/dm/zl-vue-ui)  
-![GitHub repo size](https://img.shields.io/github/repo-size/xuqichuang/zl-vue-ui)
+![Libraries.io dependency status for GitHub repo](https://img.shields.io/librariesio/github/xuqichuang/zl-vue-ui) 
+![GitHub All Releases](https://img.shields.io/github/downloads/xuqichaung/zl-vue-ui/total) 
+![npm](https://img.shields.io/npm/dm/zl-vue-ui) 
+![GitHub repo size](https://img.shields.io/github/repo-size/xuqichuang/zl-vue-ui) 
 
 </div>
 
