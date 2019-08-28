@@ -5,13 +5,18 @@
 ![GitHub](https://img.shields.io/github/license/xuqichuang/zl-vue-ui?color=linear-gradient%28-180deg%2C%232fcb53%2C%23269f42%2090%25%29&logo=github) 
 ![npm](https://img.shields.io/npm/v/zl-vue-ui?logo=npm) 
 ![GitHub issues](https://img.shields.io/github/issues/xuqichuang/zl-vue-ui) 
-
 ![Libraries.io dependency status for GitHub repo](https://img.shields.io/librariesio/github/xuqichuang/zl-vue-ui) 
 ![GitHub All Releases](https://img.shields.io/github/downloads/xuqichaung/zl-vue-ui/total) 
 ![npm](https://img.shields.io/npm/dm/zl-vue-ui) 
 ![GitHub repo size](https://img.shields.io/github/repo-size/xuqichuang/zl-vue-ui) 
 ![GitHub top language](https://img.shields.io/github/languages/top/xuqichuang/zl-vue-ui) 
 ![GitHub language count](https://img.shields.io/github/languages/count/xuqichuang/zl-vue-ui) 
+![GitHub search hit counter](https://img.shields.io/github/search/xuqichuang/zl-vue-ui/iconfont) 
+![GitHub search hit counter](https://img.shields.io/github/search/xuqichuang/zl-vue-ui/Shields) 
+![GitHub search hit counter](https://img.shields.io/github/search/xuqichuang/zl-vue-ui/SegmentFault SSL) 
+![GitHub search hit counter](https://img.shields.io/github/search/xuqichuang/zl-vue-ui/passport.csdn.net) 
+![GitHub search hit counter](https://img.shields.io/github/search/xuqichuang/zl-vue-ui/CodePen.io) 
+![GitHub search hit counter](https://img.shields.io/github/search/xuqichuang/zl-vue-ui/Fundebug) 
 
 </div>
 
