@@ -16,6 +16,8 @@
 ![GitHub search hit counter](https://img.shields.io/github/search/xuqichuang/zl-vue-ui/passport.csdn.net) 
 ![GitHub search hit counter](https://img.shields.io/github/search/xuqichuang/zl-vue-ui/CodePen.io) 
 ![GitHub search hit counter](https://img.shields.io/github/search/xuqichuang/zl-vue-ui/Fundebug) 
+![Gitter](https://img.shields.io/gitter/room/xuqichaung/zl-vue-ui) 
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/xuqichuang/zl-vue-ui) 
 
 </div>
 
