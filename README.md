@@ -2,11 +2,9 @@
   
 # zl-vue-ui
   
-![GitHub](https://img.shields.io/github/license/xuqichuang/zl-vue-ui?color=linear-gradient%28-180deg%2C%232fcb53%2C%23269f42%2090%25%29&logo=github)
-
-![npm](https://img.shields.io/npm/v/zl-vue-ui?logo=npm)
-
-![GitHub issues](https://img.shields.io/github/issues/xuqichuang/zl-vue-ui)
+![GitHub](https://img.shields.io/github/license/xuqichuang/zl-vue-ui?color=linear-gradient%28-180deg%2C%232fcb53%2C%23269f42%2090%25%29&logo=github) 
+![npm](https://img.shields.io/npm/v/zl-vue-ui?logo=npm) 
+![GitHub issues](https://img.shields.io/github/issues/xuqichuang/zl-vue-ui) 
 
 </div>
 
