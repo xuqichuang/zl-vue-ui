@@ -13,7 +13,6 @@
 ![GitHub language count](https://img.shields.io/github/languages/count/xuqichuang/zl-vue-ui) 
 ![GitHub search hit counter](https://img.shields.io/github/search/xuqichuang/zl-vue-ui/iconfont) 
 ![GitHub search hit counter](https://img.shields.io/github/search/xuqichuang/zl-vue-ui/Shields) 
-![GitHub search hit counter](https://img.shields.io/github/search/xuqichuang/zl-vue-ui/SegmentFault SSL) 
 ![GitHub search hit counter](https://img.shields.io/github/search/xuqichuang/zl-vue-ui/passport.csdn.net) 
 ![GitHub search hit counter](https://img.shields.io/github/search/xuqichuang/zl-vue-ui/CodePen.io) 
 ![GitHub search hit counter](https://img.shields.io/github/search/xuqichuang/zl-vue-ui/Fundebug) 
