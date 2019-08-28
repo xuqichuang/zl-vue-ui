@@ -18,6 +18,17 @@
 ![GitHub search hit counter](https://img.shields.io/github/search/xuqichuang/zl-vue-ui/Fundebug) 
 ![Gitter](https://img.shields.io/gitter/room/xuqichaung/zl-vue-ui) 
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/xuqichuang/zl-vue-ui) 
+![GitHub pull requests](https://img.shields.io/github/issues-pr/xuqichuang/zl-vue-ui) 
+![GitHub closed issues](https://img.shields.io/github/issues-closed/xuqichuang/zl-vue-ui) 
+![NPM](https://img.shields.io/npm/l/zl-vue-ui) 
+![GitHub followers](https://img.shields.io/github/followers/xuqichuang?style=social) 
+![GitHub forks](https://img.shields.io/github/forks/xuqichuang/zl-vue-ui?style=social) 
+![GitHub stars](https://img.shields.io/github/stars/xuqichuang/zl-vue-ui?style=social) 
+![GitHub watchers](https://img.shields.io/github/watchers/xuqichuang/zl-vue-ui?style=social) 
+![GitHub contributors](https://img.shields.io/github/contributors/xuqichuang/zl-vue-ui) 
+![GitHub last commit](https://img.shields.io/github/last-commit/xuqichuang/zl-vue-ui) 
+![GitHub last commit (branch)](https://img.shields.io/github/last-commit/xuqichuang/zl-vue-ui/master) 
+![npm collaborators](https://img.shields.io/npm/collaborators/zl-vue-ui) 
 
 </div>
 
