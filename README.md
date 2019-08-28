@@ -11,6 +11,7 @@
 ![npm](https://img.shields.io/npm/dm/zl-vue-ui) 
 ![GitHub repo size](https://img.shields.io/github/repo-size/xuqichuang/zl-vue-ui) 
 ![GitHub top language](https://img.shields.io/github/languages/top/xuqichuang/zl-vue-ui) 
+![GitHub language count](https://img.shields.io/github/languages/count/xuqichuang/zl-vue-ui) 
 
 </div>
 
