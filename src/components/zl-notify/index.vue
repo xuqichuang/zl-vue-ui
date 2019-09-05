@@ -39,6 +39,10 @@ export default {
     height:{
       type: [String, Number],
       default: 40
+    },
+    zIndex:{
+      type: Number,
+      default: 500
     }
   },
   model:{
@@ -50,7 +54,8 @@ export default {
       return {
         color: this.color,
         background: this.background,
-        height: this.height + 'px'
+        height: this.height + 'px',
+        zIndex: this.zIndex
       }
     }
   },
