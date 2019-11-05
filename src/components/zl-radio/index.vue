@@ -1,35 +1,42 @@
 <template>
-  <input type="radio" 
-    class="zl-theme-radio" 
-    :disabled="disabled" 
+  <input
+    type="radio"
+    class="zl-theme-radio"
+    :class="size"
+    :disabled="disabled"
     :checked="checked"
-    @change.stop="change"/>
+    @change.stop="change"
+  />
 </template>
 <script>
 export default {
   model: {
-    prop: 'checked',
-    event: 'change'
+    prop: "checked",
+    event: "change"
   },
-  methods:{
-    change(e){
-      this.$emit('change', e.target.checked)
+  methods: {
+    change(e) {
+      this.$emit("change", e.target.checked);
     }
   },
-  props:{
-    checked:{
-      type:Boolean,
-      default:false
+  props: {
+    checked: {
+      type: Boolean,
+      default: false
     },
-    disabled:{
-      type:Boolean,
-      default:false
+    disabled: {
+      type: Boolean,
+      default: false
+    },
+    size: {
+      type: String,
+      default: "default" //small, large
     }
   }
-}
+};
 </script>
 <style lang="less" scoped>
-input[type=radio] {
+input[type="radio"] {
   width: 20px;
   height: 20px;
   -webkit-appearance: none;
@@ -38,51 +45,49 @@ input[type=radio] {
   outline: 0 !important;
   color: #d8d8d8;
   position: relative;
-} 
-input[type=radio]:before{
+  &.small {
+    width: 15px;
+    height: 15px;
+  }
+}
+input[type="radio"]:before {
   content: "";
-  display:block;
+  display: block;
   width: 20px;
   height: 20px;
   border: 1px solid #ddd;
   background-color: #fff;
-  box-sizing:border-box;  
+  box-sizing: border-box;
   border-radius: 20px;
   position: absolute;
+  &.small:before {
+    width: 15px;
+    height: 15px;
+  }
 }
 
-input[type=radio]:disabled:before{
-  content: "";
-  display:block;
-  width: 20px;
-  height: 20px;
+input[type="radio"]:disabled:before {
   border: 1px solid #bbb;
   background-color: #ddd;
-  box-sizing:border-box;  
-  border-radius: 20px;
-  position: absolute;
 }
-input[type=radio]:checked:before{
-  content: "";
-  display:block;
-  width: 20px;
-  height: 20px;
-  border: 1px solid #D2A47E;
-  background-color: #D2A47E;
-  box-sizing:border-box;  
-  border-radius: 20px;
-  position: absolute;
+input[type="radio"]:checked:before {
+  border: 1px solid #d2a47e;
+  background-color: #d2a47e;
 }
-input[type=radio]:checked:after{
+input[type="radio"]:checked:after {
   content: "";
-  display:block;
+  display: block;
   width: 7.5px;
   height: 15px;
   border-left: 1.5px solid #fff;
   border-top: 1.5px solid #fff;
-  border-radius:  1.5px;
-  box-sizing:border-box; 
+  border-radius: 1.5px;
+  box-sizing: border-box;
   position: absolute;
   transform: rotate(-135deg) translate(-70%, 25%);
+  &.small:checked:after {
+    width: 5.625px;
+    height: 11.25px;
+  }
 }
 </style>

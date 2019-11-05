@@ -1,7 +1,7 @@
 <div align="center">
-  
+
 # zl-vue-ui
-  
+
 ![GitHub](https://img.shields.io/github/license/xuqichuang/zl-vue-ui?color=linear-gradient%28-180deg%2C%232fcb53%2C%23269f42%2090%25%29&logo=github) 
 ![npm](https://img.shields.io/npm/v/zl-vue-ui?logo=npm) 
 ![GitHub issues](https://img.shields.io/github/issues/xuqichuang/zl-vue-ui) 
@@ -30,6 +30,10 @@
 ![npm collaborators](https://img.shields.io/npm/collaborators/zl-vue-ui) 
 
 </div>
+
+- [文档地址](https://xuqichuang.github.io/zl-vue-ui-demo/dist/#/)
+
+
 
 
 > 公司实际项目中编写的一些组件，后续会持续更新，有不足的地方希望大家提出宝贵意见，大家共同进步, 主要组件如下
@@ -378,6 +382,7 @@ methods:{
 |disabled | Boolean | false | 不可选中 |--|
 |len | [Number, String] | -- | 当前选中长度 |--|
 |max | [Number, String] | -- | 允许选择最大长度 |--|
+|size | String | 'default' | 尺寸(small,default,large) |--|
 
 > 事件
 
@@ -687,6 +692,7 @@ methods:{
 |---|---|---|---|---|
 |checked | Boolean | false | 选中状态|--|
 |disabled | Boolean | false | 不可选中 |--|
+|size | String | 'default' | 尺寸(small,default,large) |--|
 
 > 事件
 
