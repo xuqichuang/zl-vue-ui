@@ -3,6 +3,7 @@
     <input
       class="zl-theme-checkbox"
       :class="size"
+      :canChange="canChange"
       type="checkbox"
       :disabled="disabled"
       :checked="checked"
@@ -25,6 +26,11 @@ export default {
   },
   methods: {
     change(e) {
+      if (!this.canChange) {
+        this.$emit("change");
+        e.preventDefault();
+        return;
+      }
       this.flag = !this.flag;
       if (this.flag) {
         this.first = e.timeStamp;
@@ -44,6 +50,10 @@ export default {
   },
   props: {
     checked: {
+      type: Boolean,
+      default: false
+    },
+    canChange: {
       type: Boolean,
       default: false
     },

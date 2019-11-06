@@ -382,6 +382,7 @@ methods:{
 |disabled | Boolean | false | 不可选中 |--|
 |len | [Number, String] | -- | 当前选中长度 |--|
 |max | [Number, String] | -- | 允许选择最大长度 |--|
+|canChange | Boolean | -- | 是否可改变选中框状态 |--|
 |size | String | 'default' | 尺寸(small,default,large) |--|
 
 > 事件
