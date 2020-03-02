@@ -57,7 +57,7 @@ export default {
     maskLoad(){
       return {
         background:this.background,
-        ...this.mask
+        zIndex:this.mask
       }
     }
   },

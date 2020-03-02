@@ -53,12 +53,12 @@ export default {
     maskLoad(){
       return {
         background:this.background,
-        ...this.maskStyle
+        zIndex:this.maskStyle
       }
     },
     sheetStyle(){
       return {
-        ...this.mask
+        zIndex:this.mask
       }
     }
   },
