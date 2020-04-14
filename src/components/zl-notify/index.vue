@@ -74,7 +74,6 @@ export default {
 </script>
 
 <style lang='less' scoped>
-@import '../../styles/animate.min.css';
 .notify{
   top: 0;
   left:0;

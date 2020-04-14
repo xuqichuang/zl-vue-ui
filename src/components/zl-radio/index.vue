@@ -54,7 +54,7 @@ input[type="radio"] {
     display: block;
     width: 20px;
     height: 20px;
-    border: 1px solid #ddd;
+    border: 1PX solid #ddd;
     background-color: #fff;
     box-sizing: border-box;
     border-radius: 20px;
@@ -65,11 +65,11 @@ input[type="radio"] {
     height: 15px;
   }
   &:disabled:before {
-    border: 1px solid #bbb;
+    border: 1PX solid #bbb;
     background-color: #ddd;
   }
   &:checked:before {
-    border: 1px solid #d2a47e;
+    border: 1PX solid #d2a47e;
     background-color: #d2a47e;
   }
   &:checked:after {
